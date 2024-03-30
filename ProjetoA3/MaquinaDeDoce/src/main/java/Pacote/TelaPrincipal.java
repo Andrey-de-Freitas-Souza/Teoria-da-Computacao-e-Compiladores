@@ -28,6 +28,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btn1real.setBackground(new Color(0,0,0,0));
         btn2reais.setBackground(new Color(0,0,0,0));
         btn5reais.setBackground(new Color(0,0,0,0));
+        btnPegar.setBackground(new Color(0,0,0,0));
+        OutGummy1.setVisible(false);
+        OutChoco1.setVisible(false);
+        OutChoco2.setVisible(false);
+        OutCookie1.setVisible(false);
+        OutCookie2.setVisible(false);
+        btnPegar.setVisible(false);
     }
 
     /**
@@ -40,6 +47,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         Saldo = new javax.swing.JLabel();
+        OutGummy1 = new javax.swing.JLabel();
+        OutCookie2 = new javax.swing.JLabel();
+        OutChoco1 = new javax.swing.JLabel();
+        btnPegar = new javax.swing.JButton();
+        OutChoco2 = new javax.swing.JLabel();
+        OutCookie1 = new javax.swing.JLabel();
         imgChoco1 = new javax.swing.JLabel();
         imgChoco3 = new javax.swing.JLabel();
         btn1real = new javax.swing.JButton();
@@ -67,11 +80,84 @@ public class TelaPrincipal extends javax.swing.JFrame {
         Saldo.setText("R$ 0,00");
         getContentPane().add(Saldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 197, 90, 30));
 
+        OutGummy1.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/OutGummy.png?raw=true")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
+        getContentPane().add(OutGummy1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 653, -1, -1));
+
+        OutCookie2.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/Outcookie2.png?raw=true")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
+        getContentPane().add(OutCookie2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 653, -1, -1));
+
+        OutChoco1.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/Outchoco1.png?raw=true")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
+        getContentPane().add(OutChoco1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 653, -1, -1));
+
+        btnPegar.setText("Pegar");
+        btnPegar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPegarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPegar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 660, 120, 80));
+
+        OutChoco2.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/Outchoco2.png?raw=true")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
+        getContentPane().add(OutChoco2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 653, -1, -1));
+
+        OutCookie1.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/Outcookie1.png?raw=true")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
+        getContentPane().add(OutCookie1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 653, -1, -1));
+
         imgChoco1.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223730552138633227/choco2.png?ex=661aeae3&is=660875e3&hm=1adca460507d195e71c434fcced64dde52ced01822ae0b89849be42dc8ade907&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/choco2.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -84,7 +170,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223730552373510266/choco1.png?ex=661aeae3&is=660875e3&hm=ebb6e6a238f2aded6b27d1aa84813309aa17e443f9b9c61d616610e5a3c79061&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/choco1.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -100,7 +186,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223730552138633227/choco2.png?ex=661aeae3&is=660875e3&hm=1adca460507d195e71c434fcced64dde52ced01822ae0b89849be42dc8ade907&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/choco2.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -113,7 +199,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223730552373510266/choco1.png?ex=661aeae3&is=660875e3&hm=ebb6e6a238f2aded6b27d1aa84813309aa17e443f9b9c61d616610e5a3c79061&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/choco1.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -126,7 +212,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223730552138633227/choco2.png?ex=661aeae3&is=660875e3&hm=1adca460507d195e71c434fcced64dde52ced01822ae0b89849be42dc8ade907&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/choco2.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -142,7 +228,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223729855003103302/imgGummy.png?ex=661aea3d&is=6608753d&hm=ec11734df35e884a903f2ae1d1ed0f3d18323fd8f9b921aa0d2ba1dc6458b216&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/imgGummy.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -158,7 +244,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223731146899062974/cookie2.png?ex=661aeb71&is=66087671&hm=4d86db621f002af1f8ffe52318692e40461922d9dd8945b1abd475c7d71e90ea&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/cookie2.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -171,7 +257,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223731146475573268/cookie1.png?ex=661aeb71&is=66087671&hm=011c697ded0cb0033cf4b2acc9404e129d39d29431ed3f08188993fe0a45f751&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/cookie1.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -184,7 +270,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223729855003103302/imgGummy.png?ex=661aea3d&is=6608753d&hm=ec11734df35e884a903f2ae1d1ed0f3d18323fd8f9b921aa0d2ba1dc6458b216&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/imgGummy.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -197,7 +283,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223730552373510266/choco1.png?ex=661aeae3&is=660875e3&hm=ebb6e6a238f2aded6b27d1aa84813309aa17e443f9b9c61d616610e5a3c79061&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/choco1.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -210,7 +296,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223729855003103302/imgGummy.png?ex=661aea3d&is=6608753d&hm=ec11734df35e884a903f2ae1d1ed0f3d18323fd8f9b921aa0d2ba1dc6458b216&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/imgGummy.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -252,7 +338,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223721693042839562/MaquinaFechadaC.png?ex=661ae2a3&is=66086da3&hm=9bdadadc9b131f197ee1bf0da2eb5ec4f9710de266282b52fd2cb6388b121767&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/MaquinaFechadaC.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -265,7 +351,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223743128549195896/ManualMaquina.png?ex=661af699&is=66088199&hm=a350507c7cf00fa930af70b87ef252805de559815a835354f06587bc59ee4e83&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/ManualMaquina.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
@@ -282,30 +368,37 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGummyMouseEntered
 
     private void btnGummyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGummyActionPerformed
-        imgMaquina.setIcon(new javax.swing.JLabel() {
+        
+        contGummy ++;
+        if(contGummy <4){
+            imgMaquina.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223721692770074686/MaquinaAbertaC.png?ex=661ae2a3&is=66086da3&hm=5bd358bb1fe968eac15151538c7ba6e700282d62e5783a82b83fa707b6bf1017&")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/MaquinaAbertaC.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
                 return null;
             }
         }.getIcon());
-        contGummy ++;
+        }
         if(contGummy == 0){
             imgGummy1.setVisible(true);
             imgGummy2.setVisible(true);
+            OutGummy1.setVisible(true);
         }
         else if(contGummy == 1){
             imgGummy1.setVisible(false);
+            OutGummy1.setVisible(true);
         }
         else if(contGummy == 2){
             imgGummy2.setVisible(false);
+            OutGummy1.setVisible(true);
         }
         else if(contGummy == 3){
             imgGummy3.setVisible(false);
+            OutGummy1.setVisible(true);
         }
         else{
            Font fonte = new Font("Arial", Font.PLAIN, 20);
@@ -314,43 +407,59 @@ public class TelaPrincipal extends javax.swing.JFrame {
            Saldo.setText("Esgotado");
            
         }
+        btnGummy.setVisible(false);
+        btnChocolate.setVisible(false);
+        btnCookie.setVisible(false);
+        btn1real.setVisible(false);
+        btn2reais.setVisible(false);
+        btn5reais.setVisible(false);
+        btnPegar.setVisible(true);
    
     }//GEN-LAST:event_btnGummyActionPerformed
 
     private void btnChocolateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChocolateActionPerformed
-        imgMaquina.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223721692770074686/MaquinaAbertaC.png?ex=661ae2a3&is=66086da3&hm=5bd358bb1fe968eac15151538c7ba6e700282d62e5783a82b83fa707b6bf1017&")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
         contChocolate ++;
+        if(contChocolate <7){
+            imgMaquina.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/MaquinaAbertaC.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+        }
+ 
         if(contChocolate == 0){
             imgChoco2.setVisible(true);
             imgChoco1.setVisible(true);
         }
         else if(contChocolate == 3){
             imgChoco2.setVisible(false);
+            OutChoco1.setVisible(true);
         }
         else if(contChocolate == 4){
             imgChoco1.setVisible(false);
+            OutChoco2.setVisible(true);
         }
         else if(contChocolate == 2){
             imgChoco3.setVisible(false);
+            OutChoco1.setVisible(true);
         }
         else if(contChocolate == 1){
             imgChoco4.setVisible(false);
+            OutChoco2.setVisible(true);
         }
         else if(contChocolate == 6){
             imgChoco5.setVisible(false);
+            OutChoco1.setVisible(true);
         }
         else if(contChocolate == 5){
             imgChoco6.setVisible(false);
+            OutChoco2.setVisible(true);
         }
         else{
            Font fonte = new Font("Arial", Font.PLAIN, 20);
@@ -359,31 +468,42 @@ public class TelaPrincipal extends javax.swing.JFrame {
            Saldo.setText("Esgotado");
            
         }
+        btnGummy.setVisible(false);
+        btnChocolate.setVisible(false);
+        btnCookie.setVisible(false);
+        btn1real.setVisible(false);
+        btn2reais.setVisible(false);
+        btn5reais.setVisible(false);
+        btnPegar.setVisible(true);
         
     }//GEN-LAST:event_btnChocolateActionPerformed
 
     private void btnCookieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCookieActionPerformed
-        imgMaquina.setIcon(new javax.swing.JLabel() {
-            public javax.swing.Icon getIcon() {
-                try {
-                    return new javax.swing.ImageIcon(
-                        new java.net.URL("https://cdn.discordapp.com/attachments/825423486012620863/1223721692770074686/MaquinaAbertaC.png?ex=661ae2a3&is=66086da3&hm=5bd358bb1fe968eac15151538c7ba6e700282d62e5783a82b83fa707b6bf1017&")
-                    );
-                } catch (java.net.MalformedURLException e) {
-                }
-                return null;
-            }
-        }.getIcon());
         contCookie ++;
+        if(contCookie <3){
+            imgMaquina.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/MaquinaAbertaC.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+        }
         if(contCookie == 0){
             imgCookie2.setVisible(true);
             imgCookie1.setVisible(true);
         }
         else if(contCookie == 1){
             imgCookie2.setVisible(false);
+            OutCookie1.setVisible(true);
         }
         else if(contCookie == 2){
             imgCookie1.setVisible(false);
+            OutCookie2.setVisible(true);
         }
         else{
            Font fonte = new Font("Arial", Font.PLAIN, 20);
@@ -392,9 +512,42 @@ public class TelaPrincipal extends javax.swing.JFrame {
            Saldo.setText("Esgotado");
            
         }
+        btnGummy.setVisible(false);
+        btnChocolate.setVisible(false);
+        btnCookie.setVisible(false);
+        btn1real.setVisible(false);
+        btn2reais.setVisible(false);
+        btn5reais.setVisible(false);
+        btnPegar.setVisible(true);
         
        
     }//GEN-LAST:event_btnCookieActionPerformed
+
+    private void btnPegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPegarActionPerformed
+        OutGummy1.setVisible(false);
+        OutChoco1.setVisible(false);
+        OutChoco2.setVisible(false);
+        OutCookie1.setVisible(false);
+        OutCookie2.setVisible(false);
+        imgMaquina.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/MaquinaFechadaC.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+        btnGummy.setVisible(true);
+        btnChocolate.setVisible(true);
+        btnCookie.setVisible(true);
+        btn1real.setVisible(true);
+        btn2reais.setVisible(true);
+        btn5reais.setVisible(true);
+        btnPegar.setVisible(false);
+    }//GEN-LAST:event_btnPegarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -432,6 +585,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel OutChoco1;
+    private javax.swing.JLabel OutChoco2;
+    private javax.swing.JLabel OutCookie1;
+    private javax.swing.JLabel OutCookie2;
+    private javax.swing.JLabel OutGummy1;
     private javax.swing.JLabel Saldo;
     private javax.swing.JButton btn1real;
     private javax.swing.JButton btn2reais;
@@ -439,6 +597,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnChocolate;
     private javax.swing.JButton btnCookie;
     private javax.swing.JButton btnGummy;
+    private javax.swing.JButton btnPegar;
     private javax.swing.JLabel imgChoco1;
     private javax.swing.JLabel imgChoco2;
     private javax.swing.JLabel imgChoco3;
