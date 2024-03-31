@@ -76,6 +76,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Saldo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -470,7 +471,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 return null;
             }
         }.getIcon());
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 280, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 290, -1, -1));
 
         jLabel2.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
@@ -483,7 +484,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 return null;
             }
         }.getIcon());
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 100, -1, 900));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 0, -1, 750));
 
         jLabel3.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
@@ -496,7 +497,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 return null;
             }
         }.getIcon());
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, -50, -1, 900));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 50, -1, 800));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
