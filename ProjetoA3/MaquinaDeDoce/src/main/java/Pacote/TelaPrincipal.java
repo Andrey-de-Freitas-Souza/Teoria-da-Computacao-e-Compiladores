@@ -6,8 +6,13 @@ package Pacote;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javazoom.jl.decoder.JavaLayerException;
+import javazoom.jl.player.Player;
+
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 /**
  *
@@ -387,6 +392,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         }.getIcon());
         btnChocolate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnChocolate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnChocolateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnChocolateMouseExited(evt);
+            }
+        });
         btnChocolate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnChocolateActionPerformed(evt);
@@ -406,6 +419,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         }.getIcon());
         btnCookie.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCookie.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCookieMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCookieMouseExited(evt);
+            }
+        });
         btnCookie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCookieActionPerformed(evt);
@@ -616,6 +637,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCookieActionPerformed
 
     private void btnPegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPegarActionPerformed
+        try {
+            // URL do áudio a ser reproduzido
+            String audioUrl = "https://www.youtube.com/watch?v=SRcnnId15BA&pp=ygUKY2FuZHkgc2hvcA%3D%3D";
+
+            // Abrir conexão com a URL
+            URL url = new URL(audioUrl);
+            InputStream inputStream = new BufferedInputStream(url.openStream());
+
+            // Criando um player JLayer
+            Player player = new Player(inputStream);
+
+            // Reproduzindo o áudio
+            player.play();
+
+        } catch (IOException | JavaLayerException e) {
+            e.printStackTrace();
+        }
         OutGummy1.setVisible(false);
         OutChoco1.setVisible(false);
         OutChoco2.setVisible(false);
@@ -778,6 +816,62 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
             }.getIcon());
     }//GEN-LAST:event_btnGummyMouseExited
+
+    private void btnChocolateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChocolateMouseEntered
+         btnChocolate.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/btnChocolate2.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+    }//GEN-LAST:event_btnChocolateMouseEntered
+
+    private void btnChocolateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnChocolateMouseExited
+        btnChocolate.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/btnChocolate1.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+    }//GEN-LAST:event_btnChocolateMouseExited
+
+    private void btnCookieMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCookieMouseEntered
+        btnCookie.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/btnCookie2.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+    }//GEN-LAST:event_btnCookieMouseEntered
+
+    private void btnCookieMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCookieMouseExited
+        btnCookie.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/btnCookie1.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+    }//GEN-LAST:event_btnCookieMouseExited
 
     /**
      * @param args the command line arguments
