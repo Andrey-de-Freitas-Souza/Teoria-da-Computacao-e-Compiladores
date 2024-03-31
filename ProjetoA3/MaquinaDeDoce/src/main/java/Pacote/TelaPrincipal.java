@@ -70,8 +70,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnCookie = new javax.swing.JButton();
         imgMaquina = new javax.swing.JLabel();
         imgManual = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Saldo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -453,6 +455,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         }.getIcon());
         getContentPane().add(imgManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/AutomatoD1.png?raw=true")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 50, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -911,5 +927,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel imgGummy3;
     private javax.swing.JLabel imgManual;
     private javax.swing.JLabel imgMaquina;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
