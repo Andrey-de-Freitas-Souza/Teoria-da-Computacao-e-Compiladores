@@ -34,6 +34,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         OutChoco2.setVisible(false);
         OutCookie1.setVisible(false);
         OutCookie2.setVisible(false);
+        btnPegar.setVisible(false);
     }
 
     /**
@@ -129,6 +130,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 return null;
             }
         }.getIcon());
+        btnPegar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPegar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnPegarMouseEntered(evt);
@@ -142,7 +144,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 btnPegarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPegar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 650, 140, -1));
+        getContentPane().add(btnPegar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 650, 140, -1));
 
         OutChoco2.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
@@ -355,14 +357,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
             public javax.swing.Icon getIcon() {
                 try {
                     return new javax.swing.ImageIcon(
-                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/MaquinaFechadaC.png?raw=true")
+                        new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/MaquinaFechada.png?raw=true")
                     );
                 } catch (java.net.MalformedURLException e) {
                 }
                 return null;
             }
         }.getIcon());
-        imgMaquina.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        imgMaquina.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(imgMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, -1, -1));
 
         imgManual.setIcon(new javax.swing.JLabel() {
@@ -431,6 +433,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btn1real.setVisible(false);
         btn2reais.setVisible(false);
         btn5reais.setVisible(false);
+        btnPegar.setVisible(true);
        
    
     }//GEN-LAST:event_btnGummyActionPerformed
@@ -492,6 +495,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btn1real.setVisible(false);
         btn2reais.setVisible(false);
         btn5reais.setVisible(false);
+        btnPegar.setVisible(true);
         
     }//GEN-LAST:event_btnChocolateActionPerformed
 
@@ -529,23 +533,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
            Saldo.setText("Esgotado");
            
         }
-        btnPegar.setIcon(new javax.swing.JLabel() {
-                public javax.swing.Icon getIcon() {
-                    try {
-                        return new javax.swing.ImageIcon(
-                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/btnPegar2.png?raw=true")
-                        );
-                    } catch (java.net.MalformedURLException e) {
-                    }
-                    return null;
-                }
-            }.getIcon());
+       
         btnGummy.setVisible(false);
         btnChocolate.setVisible(false);
         btnCookie.setVisible(false);
         btn1real.setVisible(false);
         btn2reais.setVisible(false);
         btn5reais.setVisible(false);
+        btnPegar.setVisible(true);
         
        
     }//GEN-LAST:event_btnCookieActionPerformed
@@ -560,7 +555,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 public javax.swing.Icon getIcon() {
                     try {
                         return new javax.swing.ImageIcon(
-                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/MaquinaFechadaC.png?raw=true")
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/MaquinaFechada.png?raw=true")
                         );
                     } catch (java.net.MalformedURLException e) {
                     }
@@ -584,6 +579,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btn1real.setVisible(true);
         btn2reais.setVisible(true);
         btn5reais.setVisible(true);
+        btnPegar.setVisible(false);
     }//GEN-LAST:event_btnPegarActionPerformed
 
     private void btnPegarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPegarMouseEntered
