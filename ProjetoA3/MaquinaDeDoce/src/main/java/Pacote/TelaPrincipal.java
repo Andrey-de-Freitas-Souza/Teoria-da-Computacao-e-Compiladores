@@ -144,7 +144,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 btnPegarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPegar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 650, 140, -1));
+        getContentPane().add(btnPegar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1019, 649, 140, -1));
 
         OutChoco2.setIcon(new javax.swing.JLabel() {
             public javax.swing.Icon getIcon() {
@@ -199,6 +199,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(imgChoco3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 400, -1, -1));
 
         btn1real.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn1real.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn1realMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn1realMouseExited(evt);
+            }
+        });
         getContentPane().add(btn1real, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 120, 110));
 
         imgChoco4.setIcon(new javax.swing.JLabel() {
@@ -241,6 +249,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(imgChoco6, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 400, -1, -1));
 
         btn2reais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn2reais.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn2reaisMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn2reaisMouseExited(evt);
+            }
+        });
         getContentPane().add(btn2reais, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 680, 240, 110));
 
         imgGummy1.setIcon(new javax.swing.JLabel() {
@@ -257,6 +273,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().add(imgGummy1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 310, -1, -1));
 
         btn5reais.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn5reais.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn5reaisMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn5reaisMouseExited(evt);
+            }
+        });
         getContentPane().add(btn5reais, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 540, 230, 110));
 
         imgCookie1.setIcon(new javax.swing.JLabel() {
@@ -609,6 +633,91 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
             }.getIcon());
     }//GEN-LAST:event_btnPegarMouseExited
+
+    private void btn1realMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn1realMouseEntered
+        imgManual.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/ManualMaquina1real.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+// TODO add your handling code here:
+    }//GEN-LAST:event_btn1realMouseEntered
+
+    private void btn1realMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn1realMouseExited
+        imgManual.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/ManualMaquina.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+    }//GEN-LAST:event_btn1realMouseExited
+
+    private void btn5reaisMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn5reaisMouseEntered
+        imgManual.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/ManualMaquina2reais.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+    }//GEN-LAST:event_btn5reaisMouseEntered
+
+    private void btn5reaisMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn5reaisMouseExited
+        imgManual.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/ManualMaquina.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+    }//GEN-LAST:event_btn5reaisMouseExited
+
+    private void btn2reaisMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn2reaisMouseEntered
+        imgManual.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/ManualMaquina5reais.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+    }//GEN-LAST:event_btn2reaisMouseEntered
+
+    private void btn2reaisMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn2reaisMouseExited
+        imgManual.setIcon(new javax.swing.JLabel() {
+                public javax.swing.Icon getIcon() {
+                    try {
+                        return new javax.swing.ImageIcon(
+                            new java.net.URL("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/java/Imagens/ManualMaquina.png?raw=true")
+                        );
+                    } catch (java.net.MalformedURLException e) {
+                    }
+                    return null;
+                }
+            }.getIcon());
+    }//GEN-LAST:event_btn2reaisMouseExited
 
     /**
      * @param args the command line arguments
