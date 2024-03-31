@@ -468,7 +468,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 return null;
             }
         }.getIcon());
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 50, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 270, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
