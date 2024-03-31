@@ -6,13 +6,6 @@ package Pacote;
 
 import java.awt.Color;
 import java.awt.Font;
-import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.Player;
-
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 
 /**
  *
@@ -637,23 +630,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCookieActionPerformed
 
     private void btnPegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPegarActionPerformed
-        try {
-            // URL do áudio a ser reproduzido
-            String audioUrl = "https://www.youtube.com/watch?v=SRcnnId15BA&pp=ygUKY2FuZHkgc2hvcA%3D%3D";
-
-            // Abrir conexão com a URL
-            URL url = new URL(audioUrl);
-            InputStream inputStream = new BufferedInputStream(url.openStream());
-
-            // Criando um player JLayer
-            Player player = new Player(inputStream);
-
-            // Reproduzindo o áudio
-            player.play();
-
-        } catch (IOException | JavaLayerException e) {
-            e.printStackTrace();
-        }
         OutGummy1.setVisible(false);
         OutChoco1.setVisible(false);
         OutChoco2.setVisible(false);
