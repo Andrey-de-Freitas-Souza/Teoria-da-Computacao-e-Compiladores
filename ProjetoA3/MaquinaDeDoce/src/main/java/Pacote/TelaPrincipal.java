@@ -4,6 +4,7 @@
  */
 package Pacote;
 
+import Entidades.Maquina;
 import java.awt.Color;
 import java.awt.Font;
 import javax.sound.sampled.*;
@@ -12,7 +13,7 @@ import javax.sound.sampled.*;
  * @author andre
  */
 public class TelaPrincipal extends javax.swing.JFrame {
-
+   Maquina mac = new Maquina(0,0);
    int contCookie = 0;
    int contChocolate = 0;
    int contGummy = 0;
@@ -72,7 +73,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnCookie = new javax.swing.JButton();
         imgMaquina = new javax.swing.JLabel();
         imgManual = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        imgAutomato = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -256,9 +257,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         imgManual.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/ManualMaquina.png"))); // NOI18N
         getContentPane().add(imgManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ0.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 290, -1, -1));
+        imgAutomato.setBackground(new java.awt.Color(255, 255, 255));
+        imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ0.png"))); // NOI18N
+        getContentPane().add(imgAutomato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 290, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FundoBranco.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 0, -1, 750));
@@ -564,96 +565,127 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCookieMouseExited
 
     private void btn1realActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1realActionPerformed
-        try {
-            // Carregando o arquivo de áudio
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(TelaPrincipal.class.getResourceAsStream("/Audios/SomDinheiro.wav"));
+        if(mac.getSaldo() < 10){
+            try {
+                // Carregando o arquivo de áudio
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(TelaPrincipal.class.getResourceAsStream("/Audios/SomDinheiro.wav"));
 
-            // Obtendo o formato de áudio do arquivo
-            AudioFormat format = audioInputStream.getFormat();
+                // Obtendo o formato de áudio do arquivo
+                AudioFormat format = audioInputStream.getFormat();
 
-            // Configurando o clip de áudio
-            DataLine.Info info = new DataLine.Info(Clip.class, format);
-            Clip clip = (Clip) AudioSystem.getLine(info);
+                // Configurando o clip de áudio
+                DataLine.Info info = new DataLine.Info(Clip.class, format);
+                Clip clip = (Clip) AudioSystem.getLine(info);
 
-            // Abrindo o clip de áudio
-            clip.open(audioInputStream);
+                // Abrindo o clip de áudio
+                clip.open(audioInputStream);
 
-            // Reproduzindo o áudio
-            clip.start();
-            
-            // Aguardando a reprodução terminar
-            while (!clip.isRunning()){
-                Thread.sleep(10);
+                // Reproduzindo o áudio
+                clip.start();
+
+                // Aguardando a reprodução terminar
+                while (!clip.isRunning()){
+                    Thread.sleep(10);
+                }
+                while (clip.isRunning()){
+                    Thread.sleep(10);
+                }
+
+                // Fechando o stream e o clip
+                clip.close();
+                audioInputStream.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
             }
-            while (clip.isRunning()){
-                Thread.sleep(10);
-            }
+            mac.somar(1);
+            Saldo.setText("R$"+String.valueOf(mac.getSaldo())+",00");
+            mac.MudaEstado(1);
+            String foto = String.valueOf(mac.getEstado());
+            imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ" + foto +".png")));
+        }else{
+            System.out.println("Limite Atingido");
+            btn1real.setVisible(false);
 
-            // Fechando o stream e o clip
-            clip.close();
-            audioInputStream.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
         }
     }//GEN-LAST:event_btn1realActionPerformed
 
     private void btn2reaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2reaisActionPerformed
-        try {
-            // Carregando o arquivo de áudio
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(TelaPrincipal.class.getResourceAsStream("/Audios/SomDinheiro.wav"));
+        if(mac.getSaldo() < 9){
+            try {
+                // Carregando o arquivo de áudio
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(TelaPrincipal.class.getResourceAsStream("/Audios/SomDinheiro.wav"));
 
-            // Obtendo o formato de áudio do arquivo
-            AudioFormat format = audioInputStream.getFormat();
+                // Obtendo o formato de áudio do arquivo
+                AudioFormat format = audioInputStream.getFormat();
 
-            // Configurando o clip de áudio
-            DataLine.Info info = new DataLine.Info(Clip.class, format);
-            Clip clip = (Clip) AudioSystem.getLine(info);
+                // Configurando o clip de áudio
+                DataLine.Info info = new DataLine.Info(Clip.class, format);
+                Clip clip = (Clip) AudioSystem.getLine(info);
 
-            // Abrindo o clip de áudio
-            clip.open(audioInputStream);
+                // Abrindo o clip de áudio
+                clip.open(audioInputStream);
 
-            // Reproduzindo o áudio
-            clip.start();
+                // Reproduzindo o áudio
+                clip.start();
 
-            // Aguardando a reprodução terminar
-            while (!clip.isRunning()) Thread.sleep(10);
-            while (clip.isRunning()) Thread.sleep(10);
+                // Aguardando a reprodução terminar
+                while (!clip.isRunning()) Thread.sleep(10);
+                while (clip.isRunning()) Thread.sleep(10);
 
-            // Fechando o stream e o clip
-            clip.close();
-            audioInputStream.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
+                // Fechando o stream e o clip
+                clip.close();
+                audioInputStream.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            mac.somar(2);
+            Saldo.setText("R$"+String.valueOf(mac.getSaldo())+",00");
+            mac.MudaEstado(2);
+            String foto = String.valueOf(mac.getEstado());
+            imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ" + foto +".png")));
+        }else{
+            System.out.println("LimiteAtingido");
+            btn2reais.setVisible(false);
         }
     }//GEN-LAST:event_btn2reaisActionPerformed
 
     private void btn5reaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5reaisActionPerformed
-        try {
-            // Carregando o arquivo de áudio
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(TelaPrincipal.class.getResourceAsStream("/Audios/SomDinheiro.wav"));
+        if(mac.getSaldo() < 6){
+            try {
+                // Carregando o arquivo de áudio
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(TelaPrincipal.class.getResourceAsStream("/Audios/SomDinheiro.wav"));
 
-            // Obtendo o formato de áudio do arquivo
-            AudioFormat format = audioInputStream.getFormat();
+                // Obtendo o formato de áudio do arquivo
+                AudioFormat format = audioInputStream.getFormat();
 
-            // Configurando o clip de áudio
-            DataLine.Info info = new DataLine.Info(Clip.class, format);
-            Clip clip = (Clip) AudioSystem.getLine(info);
+                // Configurando o clip de áudio
+                DataLine.Info info = new DataLine.Info(Clip.class, format);
+                Clip clip = (Clip) AudioSystem.getLine(info);
 
-            // Abrindo o clip de áudio
-            clip.open(audioInputStream);
+                // Abrindo o clip de áudio
+                clip.open(audioInputStream);
 
-            // Reproduzindo o áudio
-            clip.start();
+                // Reproduzindo o áudio
+                clip.start();
 
-            // Aguardando a reprodução terminar
-            while (!clip.isRunning()) Thread.sleep(10);
-            while (clip.isRunning()) Thread.sleep(10);
+                // Aguardando a reprodução terminar
+                while (!clip.isRunning()) Thread.sleep(10);
+                while (clip.isRunning()) Thread.sleep(10);
 
-            // Fechando o stream e o clip
-            clip.close();
-            audioInputStream.close();
-        } catch (Exception ex) {
-            ex.printStackTrace();
+                // Fechando o stream e o clip
+                clip.close();
+                audioInputStream.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            mac.somar(5);
+            Saldo.setText("R$"+String.valueOf(mac.getSaldo())+",00");
+            mac.MudaEstado(5);
+            String foto = String.valueOf(mac.getEstado());
+            imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ" + foto +".png")));
+        }else{
+                System.out.println("LimiteAtigido");
+                btn5reais.setVisible(false);
         }
     }//GEN-LAST:event_btn5reaisActionPerformed
 
@@ -691,7 +723,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 
             }
         });
-        /*try {
+        try {
             // Carregando o arquivo de áudio
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(TelaPrincipal.class.getResourceAsStream("/Audios/CandyShop.wav"));
 
@@ -721,7 +753,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             audioInputStream.close();
         } catch (Exception ex) {
             ex.printStackTrace();
-        }*/
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -738,6 +770,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnCookie;
     private javax.swing.JButton btnGummy;
     private javax.swing.JButton btnPegar;
+    private javax.swing.JLabel imgAutomato;
     private javax.swing.JLabel imgChoco1;
     private javax.swing.JLabel imgChoco2;
     private javax.swing.JLabel imgChoco3;
@@ -751,7 +784,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel imgGummy3;
     private javax.swing.JLabel imgManual;
     private javax.swing.JLabel imgMaquina;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
