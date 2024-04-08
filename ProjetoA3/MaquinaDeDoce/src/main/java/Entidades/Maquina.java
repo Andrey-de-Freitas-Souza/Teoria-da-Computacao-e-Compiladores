@@ -8,6 +8,8 @@ package Entidades;
 public class Maquina {
     private int estado;
     private int saldo;
+    private int doce;
+    private int TipoDoce;
 
     public int getEstado() {
         return estado;
@@ -37,7 +39,26 @@ public class Maquina {
         this.estado += valor;
         
     }
-    
+    public int troco(int saldo, int valor){        
+        int troco = saldo - valor;        
+        return troco;      
+    }
+
+    public int getDoce() {
+        return doce;
+    }
+
+    public void setDoce(int doce) {
+        this.doce = doce;
+    }
+
+    public int getTipoDoce() {
+        return TipoDoce;
+    }
+
+    public void setTipoDoce(int TipoDoce) {
+        this.TipoDoce = TipoDoce;
+    }
     
     
     

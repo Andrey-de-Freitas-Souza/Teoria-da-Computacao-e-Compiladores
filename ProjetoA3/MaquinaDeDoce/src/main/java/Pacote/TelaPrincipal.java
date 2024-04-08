@@ -34,7 +34,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
         OutCookie1.setVisible(false);
         OutCookie2.setVisible(false);
         btnPegar.setVisible(false);
-        
+        btnGummy.setVisible(false);
+        btnChocolate.setVisible(false);
+        btnCookie.setVisible(false);
         
     }
 
@@ -259,13 +261,13 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         imgAutomato.setBackground(new java.awt.Color(255, 255, 255));
         imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ0.png"))); // NOI18N
-        getContentPane().add(imgAutomato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 290, -1, -1));
+        getContentPane().add(imgAutomato, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 160, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FundoBranco.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 0, -1, 750));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FundoAutomatoCerto.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 0, 480, 850));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/FundoBranco.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 50, -1, 800));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 0, 470, 190));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -306,6 +308,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ11.png")));
         contGummy ++;
         if(contGummy <4){
             imgMaquina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/MaquinaAbertaC.png")));
@@ -341,7 +344,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btn5reais.setVisible(false);
         btn2reais.setVisible(false);
         btnPegar.setVisible(true);
-       
+        mac.setDoce(1);
+        mac.setTipoDoce(1);
    
     }//GEN-LAST:event_btnGummyActionPerformed
 
@@ -377,6 +381,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ12.png")));
         contChocolate ++;
         if(contChocolate <7){
             imgMaquina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/MaquinaAbertaC.png")));
@@ -389,26 +394,32 @@ public class TelaPrincipal extends javax.swing.JFrame {
         else if(contChocolate == 3){
             imgChoco2.setVisible(false);
             OutChoco1.setVisible(true);
+            mac.setTipoDoce(3);
         }
         else if(contChocolate == 4){
             imgChoco1.setVisible(false);
             OutChoco2.setVisible(true);
+            mac.setTipoDoce(2);
         }
         else if(contChocolate == 2){
             imgChoco3.setVisible(false);
             OutChoco1.setVisible(true);
+            mac.setTipoDoce(2);
         }
         else if(contChocolate == 1){
             imgChoco4.setVisible(false);
             OutChoco2.setVisible(true);
+            mac.setTipoDoce(3);
         }
         else if(contChocolate == 6){
             imgChoco5.setVisible(false);
             OutChoco1.setVisible(true);
+            mac.setTipoDoce(2);
         }
         else if(contChocolate == 5){
             imgChoco6.setVisible(false);
             OutChoco2.setVisible(true);
+            mac.setTipoDoce(3);
         }
         else{
            Font fonte = new Font("Arial", Font.PLAIN, 20);
@@ -417,6 +428,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
            Saldo.setText("Esgotado");
            
         }
+        mac.setDoce(2);
         btnGummy.setVisible(false);
         btnChocolate.setVisible(false);
         btnCookie.setVisible(false);
@@ -459,6 +471,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ13.png")));
         contCookie ++;
         if(contCookie <3){
             imgMaquina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/MaquinaAbertaC.png")));
@@ -470,10 +483,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         else if(contCookie == 1){
             imgCookie2.setVisible(false);
             OutCookie1.setVisible(true);
+            mac.setTipoDoce(4);
         }
         else if(contCookie == 2){
             imgCookie1.setVisible(false);
             OutCookie2.setVisible(true);
+            mac.setTipoDoce(5);
         }
         else{
            Font fonte = new Font("Arial", Font.PLAIN, 20);
@@ -482,7 +497,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
            Saldo.setText("Esgotado");
            
         }
-       
+        mac.setDoce(3);
         btnGummy.setVisible(false);
         btnChocolate.setVisible(false);
         btnCookie.setVisible(false);
@@ -509,6 +524,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btn5reais.setVisible(true);
         btn2reais.setVisible(true);
         btnPegar.setVisible(false);
+        int saldoFinal = 0;
+        if(mac.getDoce()==1){
+            saldoFinal = mac.troco(mac.getSaldo(), 6);
+        }
+        else if(mac.getDoce()==2){
+            saldoFinal = mac.troco(mac.getSaldo(), 7);   
+        }
+        else if(mac.getDoce()==3){
+            saldoFinal = mac.troco(mac.getSaldo(), 8);     
+        }
+        
+    
+        mac.setSaldo(0);
+        mac.setEstado(0);
+        imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ0.png")));
+        Saldo.setText("R$"+String.valueOf(mac.getSaldo())+",00");
+        btnGummy.setVisible(false);
+        btnChocolate.setVisible(false);
+        btnCookie.setVisible(false);
+        TelaCompra TC = new TelaCompra(saldoFinal, mac.getTipoDoce());
+        TC.setVisible(true);
+        
     }//GEN-LAST:event_btnPegarActionPerformed
 
     private void btnPegarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPegarMouseEntered
@@ -602,6 +639,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
             mac.MudaEstado(1);
             String foto = String.valueOf(mac.getEstado());
             imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ" + foto +".png")));
+            if(mac.getEstado()>=6){
+                btnGummy.setVisible(true);
+            }
+            if(mac.getEstado()>=7){
+                btnChocolate.setVisible(true);
+            }
+            if(mac.getEstado()>=8){
+                btnCookie.setVisible(true);
+            }
         }else{
             System.out.println("Limite Atingido");
             btn1real.setVisible(false);
@@ -635,6 +681,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 // Fechando o stream e o clip
                 clip.close();
                 audioInputStream.close();
+                
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
@@ -643,6 +690,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
             mac.MudaEstado(2);
             String foto = String.valueOf(mac.getEstado());
             imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ" + foto +".png")));
+            if(mac.getEstado()>=6){
+                btnGummy.setVisible(true);
+            }
+            if(mac.getEstado()>=7){
+                btnChocolate.setVisible(true);
+            }
+            if(mac.getEstado()>=8){
+                btnCookie.setVisible(true);
+            }
         }else{
             System.out.println("LimiteAtingido");
             btn2reais.setVisible(false);
@@ -683,6 +739,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
             mac.MudaEstado(5);
             String foto = String.valueOf(mac.getEstado());
             imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/AutomatoQ" + foto +".png")));
+            if(mac.getEstado()>=6){
+                btnGummy.setVisible(true);
+            }
+            if(mac.getEstado()>=7){
+                btnChocolate.setVisible(true);
+            }
+            if(mac.getEstado()>=8){
+                btnCookie.setVisible(true);
+            }
         }else{
                 System.out.println("LimiteAtigido");
                 btn5reais.setVisible(false);
@@ -723,7 +788,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 
             }
         });
-        try {
+        /*try {
             // Carregando o arquivo de áudio
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(TelaPrincipal.class.getResourceAsStream("/Audios/CandyShop.wav"));
 
@@ -753,7 +818,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
             audioInputStream.close();
         } catch (Exception ex) {
             ex.printStackTrace();
-        }
+        }*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
