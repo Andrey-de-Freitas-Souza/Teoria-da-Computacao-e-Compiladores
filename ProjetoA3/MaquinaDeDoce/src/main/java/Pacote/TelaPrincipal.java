@@ -510,6 +510,28 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCookieActionPerformed
 
     private void btnPegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPegarActionPerformed
+        if(contGummy == 3){
+            contGummy = 0;
+            imgCookie1.setVisible(true);
+            imgCookie2.setVisible(true);
+            imgGummy1.setVisible(true);
+            imgGummy2.setVisible(true);
+            imgGummy3.setVisible(true);   
+        }
+        if(contChocolate == 6){
+            contChocolate = 0;
+            imgChoco1.setVisible(true);
+            imgChoco2.setVisible(true);
+            imgChoco3.setVisible(true);
+            imgChoco4.setVisible(true);
+            imgChoco5.setVisible(true);
+            imgChoco6.setVisible(true);
+        }
+        if(contCookie == 2){
+            contCookie = 0;
+            imgCookie1.setVisible(true);
+            imgCookie2.setVisible(true);  
+        }
         OutGummy1.setVisible(false);
         OutChoco1.setVisible(false);
         OutChoco2.setVisible(false);
