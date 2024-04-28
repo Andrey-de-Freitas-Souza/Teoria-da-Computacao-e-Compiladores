@@ -35,6 +35,9 @@ public class TelaElevador extends javax.swing.JFrame {
         btnSubir = new javax.swing.JButton();
         imgAutomato = new javax.swing.JLabel();
         imgElevador = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        imgElevador2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -51,7 +54,16 @@ public class TelaElevador extends javax.swing.JFrame {
         getContentPane().add(imgAutomato, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, -1, -1));
 
         imgElevador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorAberto.png"))); // NOI18N
-        getContentPane().add(imgElevador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, -1, -1));
+        getContentPane().add(imgElevador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 730, -1, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+
+        imgElevador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png"))); // NOI18N
+        getContentPane().add(imgElevador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -78,6 +90,16 @@ public class TelaElevador extends javax.swing.JFrame {
             // Código a ser executado após 1 segundo
             imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/Automato1A.png")));
         }, 4, TimeUnit.SECONDS);
+        executor.schedule(() -> {
+            // Código a ser executado após 1 segundo
+            imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/Automato1A1.png")));
+            imgElevador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorAbrindo.png")));
+        }, 5, TimeUnit.SECONDS);
+        executor.schedule(() -> {
+            // Código a ser executado após 1 segundo
+            imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/Automato1A2.png")));
+            imgElevador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorAberto.png")));
+        }, 6, TimeUnit.SECONDS);
             
 
     }//GEN-LAST:event_btnSubirActionPerformed
@@ -121,5 +143,8 @@ public class TelaElevador extends javax.swing.JFrame {
     private javax.swing.JButton btnSubir;
     private javax.swing.JLabel imgAutomato;
     private javax.swing.JLabel imgElevador;
+    private javax.swing.JLabel imgElevador2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
