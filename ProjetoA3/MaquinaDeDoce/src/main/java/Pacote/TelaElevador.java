@@ -42,12 +42,6 @@ public class TelaElevador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Andares = new javax.swing.JPanel();
-        btn3 = new javax.swing.JButton();
-        btn2 = new javax.swing.JButton();
-        btn1 = new javax.swing.JButton();
-        btnT = new javax.swing.JButton();
-        FundoBtn = new javax.swing.JLabel();
         Princi = new javax.swing.JPanel();
         ind3 = new javax.swing.JLabel();
         ind2 = new javax.swing.JLabel();
@@ -69,82 +63,17 @@ public class TelaElevador extends javax.swing.JFrame {
         imgAutomato = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        Andares = new javax.swing.JPanel();
+        btn3 = new javax.swing.JButton();
+        btn2 = new javax.swing.JButton();
+        btn1 = new javax.swing.JButton();
+        btnT = new javax.swing.JButton();
+        FundoBtn = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Andares.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btn3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn3MouseExited(evt);
-            }
-        });
-        btn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3ActionPerformed(evt);
-            }
-        });
-        Andares.add(btn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 48, 120, 130));
-
-        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn2MouseExited(evt);
-            }
-        });
-        btn2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2ActionPerformed(evt);
-            }
-        });
-        Andares.add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 224, 120, 130));
-
-        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btn1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btn1MouseExited(evt);
-            }
-        });
-        btn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
-            }
-        });
-        Andares.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 120, 130));
-
-        btnT.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnT.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnTMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnTMouseExited(evt);
-            }
-        });
-        btnT.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTActionPerformed(evt);
-            }
-        });
-        Andares.add(btnT, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 577, 120, 130));
-
-        FundoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/FundoBotoes.png"))); // NOI18N
-        Andares.add(FundoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        getContentPane().add(Andares, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 780));
 
         Princi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -237,6 +166,77 @@ public class TelaElevador extends javax.swing.JFrame {
         Princi.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 530, 450, 250));
 
         getContentPane().add(Princi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 780));
+
+        Andares.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn3MouseExited(evt);
+            }
+        });
+        btn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3ActionPerformed(evt);
+            }
+        });
+        Andares.add(btn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 48, 120, 130));
+
+        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn2MouseExited(evt);
+            }
+        });
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
+        Andares.add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 224, 120, 130));
+
+        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn1MouseExited(evt);
+            }
+        });
+        btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1ActionPerformed(evt);
+            }
+        });
+        Andares.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 120, 130));
+
+        btnT.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnTMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnTMouseExited(evt);
+            }
+        });
+        btnT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTActionPerformed(evt);
+            }
+        });
+        Andares.add(btnT, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 577, 120, 130));
+
+        FundoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/FundoBotoes.png"))); // NOI18N
+        Andares.add(FundoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        getContentPane().add(Andares, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 780));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

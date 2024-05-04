@@ -103,6 +103,10 @@ public class Elevador {
                     JButton btnChamaTerrer,JButton btnChamar1andar,JButton btnChamar2andar,JButton btnChamar3andar,
                             int andar,int andarDest, JLabel imgAutomato,JLabel imgElevador1,JLabel imgElevador2){
         int timer = 1;
+        Tsub1.setVisible(true);
+        Tsub2.setVisible(true);
+        Tsub3.setVisible(true);
+        Tsub4.setVisible(true);
         Tsub1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TDesc.png")));
         Tsub2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TDesc.png")));
         Tsub3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TDesc.png")));
