@@ -23,26 +23,27 @@ public class Elevador {
         executor.schedule(() -> {
             System.out.println("/Imagens2/AutomatoA" +andar + "3.png");
             imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoA" +andar + "3.png")));
-            
+            System.out.println("/Imagens2/ElevadorAbrindo.png");
             imgElevador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorAbrindo.png")));
         }, timer, TimeUnit.SECONDS);
         timer++;
         executor.schedule(() -> {
             System.out.println("/Imagens2/AutomatoA" +andar + ".png");
             imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoA" +andar + ".png")));
-            
+            System.out.println("/Imagens2/ElevadorFechado.png");
             imgElevador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png")));
         }, timer, TimeUnit.SECONDS);
-        timer--;
-        for(int i = andar; i <= andarDest;i++){ 
+        timer++;
+        for(int i = andar; i < andarDest;i++){ 
             final int finalI = i;
             executor.schedule(() -> {
-               imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoUP" + String.valueOf(finalI) +".png")));
+                System.out.println("/Imagens2/AutomatoUP" + String.valueOf(finalI) +".png");
+               imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoUP" + String.valueOf(finalI+1) +".png")));
             }, timer, TimeUnit.SECONDS);
             timer++;
            executor.schedule(() -> {
-               // Código a ser executado após 1 segundo
-               imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoA"+ finalI +".png")));
+               System.out.println("/Imagens2/AutomatoA"+ finalI +".png");
+               imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoA"+ (finalI+1) +".png")));
                                                              
             }, timer, TimeUnit.SECONDS); 
            timer++;
@@ -52,6 +53,7 @@ public class Elevador {
           this.andares++; 
           System.out.println(this.andares);   
         }
+        
         executor.schedule(() -> {
             // Código a ser executado após 1 segundo
             imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoA" +this.andares + "1.png")));
