@@ -9,6 +9,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 
 public class Elevador {
@@ -16,9 +17,18 @@ public class Elevador {
      
     
      
-    public void subirAndares(JLabel ind0,JLabel ind1,JLabel ind2,JLabel ind3,JLabel imgPredio,JButton btnChamaTerrer,JButton btnChamar1andar,JButton btnChamar2andar,JButton btnChamar3andar,
+    public void subirAndares(boolean chamada,JPanel Princi,JPanel Andares,JLabel Tsub1,JLabel Tsub2,JLabel Tsub3,JLabel Tsub4,JLabel ind0,JLabel ind1,JLabel ind2,JLabel ind3,
+            JLabel imgPredio,JButton btnChamaTerrer,JButton btnChamar1andar,JButton btnChamar2andar,JButton btnChamar3andar,
                             int andar,int andarDest, JLabel imgAutomato,JLabel imgElevador1,JLabel imgElevador2){
         int timer = 1;
+        Tsub1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TSub.png")));
+        Tsub2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TSub.png")));
+        Tsub3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TSub.png")));
+        Tsub4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TSub.png")));
+        Tsub1.setVisible(true);
+        Tsub2.setVisible(true);
+        Tsub3.setVisible(true);
+        Tsub4.setVisible(true);
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
         executor.schedule(() -> {
             System.out.println("/Imagens2/AutomatoA" +andar + "3.png");
@@ -73,14 +83,30 @@ public class Elevador {
         btnChamar1andar.setVisible(true);
         btnChamar2andar.setVisible(true);
         btnChamar3andar.setVisible(true);
+        Tsub1.setVisible(false);
+        Tsub2.setVisible(false);
+        Tsub3.setVisible(false);
+        Tsub4.setVisible(false);
+        
         }, timer, TimeUnit.SECONDS);
         timer++; 
-          
+        if(chamada){
+            executor.schedule(() -> {
+            Andares.setVisible(true);
+            Princi.setVisible(false);    
+            }, timer, TimeUnit.SECONDS);
+              
+        }
+        timer++;
     }
-    public void descerAndares(JLabel ind0,JLabel ind1,JLabel ind2,JLabel ind3,JLabel imgPredio, 
+    public void descerAndares(boolean chamada,JPanel Princi,JPanel Andares,JLabel Tsub1,JLabel Tsub2,JLabel Tsub3,JLabel Tsub4,JLabel ind0,JLabel ind1,JLabel ind2,JLabel ind3,JLabel imgPredio, 
                     JButton btnChamaTerrer,JButton btnChamar1andar,JButton btnChamar2andar,JButton btnChamar3andar,
                             int andar,int andarDest, JLabel imgAutomato,JLabel imgElevador1,JLabel imgElevador2){
         int timer = 1;
+        Tsub1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TDesc.png")));
+        Tsub2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TDesc.png")));
+        Tsub3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TDesc.png")));
+        Tsub4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TDesc.png")));
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
         executor.schedule(() -> {
             System.out.println("/Imagens2/AutomatoA" +andar + "3.png");
@@ -135,9 +161,21 @@ public class Elevador {
         btnChamar1andar.setVisible(true);
         btnChamar2andar.setVisible(true);
         btnChamar3andar.setVisible(true);
+        Tsub1.setVisible(false);
+        Tsub2.setVisible(false);
+        Tsub3.setVisible(false);
+        Tsub4.setVisible(false);
+
         }, timer, TimeUnit.SECONDS);
-        timer++; 
-          
+        timer++;
+        if(chamada){
+            executor.schedule(() -> {
+            Andares.setVisible(true);
+            Princi.setVisible(false);    
+            }, timer, TimeUnit.SECONDS);
+              
+        }
+        timer++;
     }
 
 

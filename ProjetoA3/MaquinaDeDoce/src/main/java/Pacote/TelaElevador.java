@@ -21,6 +21,16 @@ public class TelaElevador extends javax.swing.JFrame {
         btnChamar1andar.setBackground(new Color(0,0,0,0));
         btnChamar2andar.setBackground(new Color(0,0,0,0));
         btnChamar3andar.setBackground(new Color(0,0,0,0));
+        btn1.setBackground(new Color(0,0,0,0));
+        btn2.setBackground(new Color(0,0,0,0));
+        btn3.setBackground(new Color(0,0,0,0));
+        btnT.setBackground(new Color(0,0,0,0));
+        Tsub1.setVisible(false);
+        Tsub2.setVisible(false);
+        Tsub3.setVisible(false);
+        Tsub4.setVisible(false);
+        Andares.setVisible(false);
+        
     }
     
     /**
@@ -32,8 +42,19 @@ public class TelaElevador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Andares = new javax.swing.JPanel();
+        btn3 = new javax.swing.JButton();
+        btn2 = new javax.swing.JButton();
+        btn1 = new javax.swing.JButton();
+        btnT = new javax.swing.JButton();
+        FundoBtn = new javax.swing.JLabel();
+        Princi = new javax.swing.JPanel();
         ind3 = new javax.swing.JLabel();
         ind2 = new javax.swing.JLabel();
+        Tsub4 = new javax.swing.JLabel();
+        Tsub3 = new javax.swing.JLabel();
+        Tsub2 = new javax.swing.JLabel();
+        Tsub1 = new javax.swing.JLabel();
         ind1 = new javax.swing.JLabel();
         ind0 = new javax.swing.JLabel();
         btnChamar3andar = new javax.swing.JButton();
@@ -54,25 +75,110 @@ public class TelaElevador extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Andares.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn3MouseExited(evt);
+            }
+        });
+        btn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3ActionPerformed(evt);
+            }
+        });
+        Andares.add(btn3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 48, 120, 130));
+
+        btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn2MouseExited(evt);
+            }
+        });
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
+        Andares.add(btn2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 224, 120, 130));
+
+        btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btn1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btn1MouseExited(evt);
+            }
+        });
+        btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1ActionPerformed(evt);
+            }
+        });
+        Andares.add(btn1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 120, 130));
+
+        btnT.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnTMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnTMouseExited(evt);
+            }
+        });
+        btnT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTActionPerformed(evt);
+            }
+        });
+        Andares.add(btnT, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 577, 120, 130));
+
+        FundoBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/FundoBotoes.png"))); // NOI18N
+        Andares.add(FundoBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        getContentPane().add(Andares, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 780));
+
+        Princi.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         ind3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ind3.setForeground(new java.awt.Color(0, 255, 255));
         ind3.setText("0");
-        getContentPane().add(ind3, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 60, -1, -1));
+        Princi.add(ind3, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 60, -1, -1));
 
         ind2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ind2.setForeground(new java.awt.Color(0, 255, 255));
         ind2.setText("0");
-        getContentPane().add(ind2, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 230, -1, -1));
+        Princi.add(ind2, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 230, -1, -1));
+
+        Tsub4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TSub.png"))); // NOI18N
+        Princi.add(Tsub4, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 66, -1, -1));
+
+        Tsub3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TSub.png"))); // NOI18N
+        Princi.add(Tsub3, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 236, -1, -1));
+
+        Tsub2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TSub.png"))); // NOI18N
+        Princi.add(Tsub2, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 416, -1, -1));
+
+        Tsub1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/TSub.png"))); // NOI18N
+        Princi.add(Tsub1, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 596, -1, -1));
 
         ind1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ind1.setForeground(new java.awt.Color(0, 255, 255));
         ind1.setText("0");
-        getContentPane().add(ind1, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 410, -1, -1));
+        Princi.add(ind1, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 410, -1, -1));
 
         ind0.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ind0.setForeground(new java.awt.Color(0, 255, 255));
         ind0.setText("0");
-        getContentPane().add(ind0, new org.netbeans.lib.awtextra.AbsoluteConstraints(116, 590, -1, -1));
+        Princi.add(ind0, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 590, -1, -1));
 
         btnChamar3andar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnChamar3andar.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +186,7 @@ public class TelaElevador extends javax.swing.JFrame {
                 btnChamar3andarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnChamar3andar, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 130, 22, 22));
+        Princi.add(btnChamar3andar, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 130, 22, 22));
 
         btnChamar1andar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnChamar1andar.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +194,7 @@ public class TelaElevador extends javax.swing.JFrame {
                 btnChamar1andarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnChamar1andar, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 485, 22, 22));
+        Princi.add(btnChamar1andar, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 485, 22, 22));
 
         btnChamar2andar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnChamar2andar.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +202,7 @@ public class TelaElevador extends javax.swing.JFrame {
                 btnChamar2andarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnChamar2andar, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 310, 22, 22));
+        Princi.add(btnChamar2andar, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 310, 22, 22));
 
         btnChamaTerrer.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnChamaTerrer.addActionListener(new java.awt.event.ActionListener() {
@@ -104,31 +210,33 @@ public class TelaElevador extends javax.swing.JFrame {
                 btnChamaTerrerActionPerformed(evt);
             }
         });
-        getContentPane().add(btnChamaTerrer, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 660, 22, 22));
+        Princi.add(btnChamaTerrer, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 660, 22, 22));
 
         imgElevador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorAberto.png"))); // NOI18N
-        getContentPane().add(imgElevador, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 590, -1, -1));
+        Princi.add(imgElevador, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 590, -1, -1));
 
         imgElevador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png"))); // NOI18N
-        getContentPane().add(imgElevador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
+        Princi.add(imgElevador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
 
         imgElevador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png"))); // NOI18N
-        getContentPane().add(imgElevador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, -1, -1));
+        Princi.add(imgElevador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 410, -1, -1));
 
         imgElevador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png"))); // NOI18N
-        getContentPane().add(imgElevador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
+        Princi.add(imgElevador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
 
         imgPredio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/imgPredio.png"))); // NOI18N
-        getContentPane().add(imgPredio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        Princi.add(imgPredio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoA02.png"))); // NOI18N
-        getContentPane().add(imgAutomato, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 50, -1, -1));
+        Princi.add(imgAutomato, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 50, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/FundoBranco.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 0, 450, 250));
+        Princi.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 0, 450, 250));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/FundoBranco.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 530, 450, 250));
+        Princi.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 530, 450, 250));
+
+        getContentPane().add(Princi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 780));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -139,28 +247,26 @@ public class TelaElevador extends javax.swing.JFrame {
         btnChamar1andar.setVisible(false);
         btnChamar2andar.setVisible(false);
         btnChamar3andar.setVisible(false);
+        
         int andar = elevador.getAndares();
         int andarDest = 3;
         
         switch (andar){
             case 0 :{
-               elevador.subirAndares(ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador,imgElevador4);   
+               elevador.subirAndares(true,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador,imgElevador4);   
                break;
             }
             case 1 :{
-              elevador.subirAndares(ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador2,imgElevador4);              
+              elevador.subirAndares(true,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador2,imgElevador4);              
               break;
             }
             case 2: {
-              elevador.subirAndares(ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador3,imgElevador4);
+              elevador.subirAndares(true,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador3,imgElevador4);
               break;
             }
             case 3: {
-              System.out.println("Elevador já está nesse andar");
-              btnChamaTerrer.setVisible(true);
-              btnChamar1andar.setVisible(true);
-              btnChamar2andar.setVisible(true);
-              btnChamar3andar.setVisible(true);
+              Andares.setVisible(true);
+              Princi.setVisible(false);
               break;
             }  
         }
@@ -180,23 +286,20 @@ public class TelaElevador extends javax.swing.JFrame {
 
         switch (andar){
             case 0 :{
-               System.out.println("Elevador já está nesse andar");
-               btnChamaTerrer.setVisible(true);
-              btnChamar1andar.setVisible(true);
-              btnChamar2andar.setVisible(true);
-              btnChamar3andar.setVisible(true);
+               Andares.setVisible(true);
+              Princi.setVisible(false);
                break;
             }
             case 1 :{
-              elevador.descerAndares(ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador2,imgElevador);              
+              elevador.descerAndares(true,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador2,imgElevador);              
               break;
             }
             case 2: {
-              elevador.descerAndares(ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador3,imgElevador);
+              elevador.descerAndares(true,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador3,imgElevador);
               break;
             }
             case 3: {
-              elevador.descerAndares(ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador4,imgElevador);
+              elevador.descerAndares(true,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador4,imgElevador);
               break;
             }  
         }
@@ -213,23 +316,20 @@ public class TelaElevador extends javax.swing.JFrame {
         int andarDest = 2;
         switch (andar){
             case 0 :{
-               elevador.subirAndares(ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador,imgElevador3); 
+               elevador.subirAndares(true,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador,imgElevador3); 
                break;
             }
             case 1 :{
-              elevador.subirAndares(ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador2,imgElevador3);              
+              elevador.subirAndares(true,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador2,imgElevador3);              
               break;
             }
             case 2: {
-              System.out.println("Elevador já está nesse andar");  
-              btnChamaTerrer.setVisible(true);
-              btnChamar1andar.setVisible(true);
-              btnChamar2andar.setVisible(true);
-              btnChamar3andar.setVisible(true);
+              Andares.setVisible(true);
+              Princi.setVisible(false);
               break;
             }
             case 3: {
-              elevador.descerAndares(ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador4,imgElevador3);
+              elevador.descerAndares(true,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador4,imgElevador3);
               break;
             }  
         }
@@ -245,27 +345,183 @@ public class TelaElevador extends javax.swing.JFrame {
         int andarDest = 1;
         switch (andar){
             case 0 :{
-               elevador.subirAndares(ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador,imgElevador2); 
+               elevador.subirAndares(true,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador,imgElevador2); 
                break;
             }
             case 1 :{
-              System.out.println("Elevador já está nesse andar");  
-              btnChamaTerrer.setVisible(true);
-              btnChamar1andar.setVisible(true);
-              btnChamar2andar.setVisible(true);
-              btnChamar3andar.setVisible(true);
+             Andares.setVisible(true);
+              Princi.setVisible(false);
               break;
             }
             case 2: {
-              elevador.descerAndares(ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador3,imgElevador2);
+              elevador.descerAndares(true,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador3,imgElevador2);
               break;  
             }
             case 3: {
-              elevador.descerAndares(ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador4,imgElevador2);
+              elevador.descerAndares(true,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador4,imgElevador2);
               break;
             }  
         }
     }//GEN-LAST:event_btnChamar1andarActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        Andares.setVisible(false);
+        Princi.setVisible(true);
+        imgPredio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/imgPredio2.png")));
+        btnChamaTerrer.setVisible(false);
+        btnChamar1andar.setVisible(false);
+        btnChamar2andar.setVisible(false);
+        btnChamar3andar.setVisible(false);
+        int andar = elevador.getAndares();
+        int andarDest = 2;
+        switch (andar){
+            case 0 :{
+               elevador.subirAndares(false,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador,imgElevador3); 
+               break;
+            }
+            case 1 :{
+              elevador.subirAndares(false,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador2,imgElevador3);              
+              break;
+            }
+            case 2: {
+              Andares.setVisible(true);
+              Princi.setVisible(false);
+              break;
+            }
+            case 3: {
+              elevador.descerAndares(false,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador4,imgElevador3);
+              break;
+            }  
+        }
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+        Andares.setVisible(false);
+        Princi.setVisible(true);
+        imgPredio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/imgPredio1.png")));
+        btnChamaTerrer.setVisible(false);
+        btnChamar1andar.setVisible(false);
+        btnChamar2andar.setVisible(false);
+        btnChamar3andar.setVisible(false);
+        int andar = elevador.getAndares();
+        int andarDest = 1;
+        switch (andar){
+            case 0 :{
+               elevador.subirAndares(false,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador,imgElevador2); 
+               break;
+            }
+            case 1 :{
+             Andares.setVisible(true);
+              Princi.setVisible(false);
+              break;
+            }
+            case 2: {
+              elevador.descerAndares(false,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador3,imgElevador2);
+              break;  
+            }
+            case 3: {
+              elevador.descerAndares(false,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador4,imgElevador2);
+              break;
+            }  
+        }
+    }//GEN-LAST:event_btn1ActionPerformed
+
+    private void btnTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTActionPerformed
+        Andares.setVisible(false);
+        Princi.setVisible(true);
+        imgPredio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/imgPredioT.png")));
+        btnChamaTerrer.setVisible(false);
+        btnChamar1andar.setVisible(false);
+        btnChamar2andar.setVisible(false);
+        btnChamar3andar.setVisible(false);
+        int andar = elevador.getAndares();
+        int andarDest = 0;
+
+        switch (andar){
+            case 0 :{
+               Andares.setVisible(true);
+              Princi.setVisible(false);
+               break;
+            }
+            case 1 :{
+              elevador.descerAndares(false,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador2,imgElevador);              
+              break;
+            }
+            case 2: {
+              elevador.descerAndares(false,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador3,imgElevador);
+              break;
+            }
+            case 3: {
+              elevador.descerAndares(false,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador4,imgElevador);
+              break;
+            }  
+        }
+    }//GEN-LAST:event_btnTActionPerformed
+
+    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+        Andares.setVisible(false);
+        Princi.setVisible(true);
+        imgPredio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/imgPredio3.png")));
+        btnChamaTerrer.setVisible(false);
+        btnChamar1andar.setVisible(false);
+        btnChamar2andar.setVisible(false);
+        btnChamar3andar.setVisible(false);
+        
+        int andar = elevador.getAndares();
+        int andarDest = 3;
+        
+        switch (andar){
+            case 0 :{
+               elevador.subirAndares(false,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador,imgElevador4);   
+               break;
+            }
+            case 1 :{
+              elevador.subirAndares(false,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador2,imgElevador4);              
+              break;
+            }
+            case 2: {
+              elevador.subirAndares(false,Princi,Andares ,Tsub1,Tsub2,Tsub3,Tsub4,ind0,ind1,ind2, ind3,imgPredio,btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador3,imgElevador4);
+              break;
+            }
+            case 3: {
+              Andares.setVisible(true);
+              Princi.setVisible(false);
+              break;
+            }  
+        }
+    }//GEN-LAST:event_btn3ActionPerformed
+
+    private void btn3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn3MouseEntered
+        btn3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/btn32.png")));
+    }//GEN-LAST:event_btn3MouseEntered
+
+    private void btn3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn3MouseExited
+        btn3.setIcon(null);
+    }//GEN-LAST:event_btn3MouseExited
+
+    private void btn2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn2MouseEntered
+        btn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/btn22.png")));
+    }//GEN-LAST:event_btn2MouseEntered
+
+    private void btn2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn2MouseExited
+        btn2.setIcon(null);
+    }//GEN-LAST:event_btn2MouseExited
+
+    private void btn1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn1MouseEntered
+        btn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/btn12.png")));
+    }//GEN-LAST:event_btn1MouseEntered
+
+    private void btn1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn1MouseExited
+        btn1.setIcon(null);
+    }//GEN-LAST:event_btn1MouseExited
+
+    private void btnTMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTMouseEntered
+        btnT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/btnT2.png")));
+    }//GEN-LAST:event_btnTMouseEntered
+
+    private void btnTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTMouseExited
+        btnT.setIcon(null);
+    }//GEN-LAST:event_btnTMouseExited
 
     /**
      * @param args the command line arguments
@@ -303,10 +559,21 @@ public class TelaElevador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Andares;
+    private javax.swing.JLabel FundoBtn;
+    private javax.swing.JPanel Princi;
+    private javax.swing.JLabel Tsub1;
+    private javax.swing.JLabel Tsub2;
+    private javax.swing.JLabel Tsub3;
+    private javax.swing.JLabel Tsub4;
+    private javax.swing.JButton btn1;
+    private javax.swing.JButton btn2;
+    private javax.swing.JButton btn3;
     private javax.swing.JButton btnChamaTerrer;
     private javax.swing.JButton btnChamar1andar;
     private javax.swing.JButton btnChamar2andar;
     private javax.swing.JButton btnChamar3andar;
+    private javax.swing.JButton btnT;
     private javax.swing.JLabel imgAutomato;
     private javax.swing.JLabel imgElevador;
     private javax.swing.JLabel imgElevador2;
