@@ -4,6 +4,7 @@
  */
 package Pacote;
 
+import Entidades.Elevador;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -15,14 +16,11 @@ import java.util.logging.Logger;
  * @author andre
  */
 public class TelaElevador extends javax.swing.JFrame {
-
-    /**
-     * Creates new form TelaElevador
-     */
+    Elevador elevador = new Elevador();
     public TelaElevador() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,77 +30,199 @@ public class TelaElevador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnSubir = new javax.swing.JButton();
+        btnChamar3andar = new javax.swing.JButton();
+        btnChamar1andar = new javax.swing.JButton();
+        btnChamar2andar = new javax.swing.JButton();
+        btnChamaTerrer = new javax.swing.JButton();
         imgAutomato = new javax.swing.JLabel();
         imgElevador = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        imgElevador4 = new javax.swing.JLabel();
         imgElevador2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        imgElevador3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSubir.setText("jButton1");
-        btnSubir.addActionListener(new java.awt.event.ActionListener() {
+        btnChamar3andar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubirActionPerformed(evt);
+                btnChamar3andarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSubir, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 590, 100, 60));
+        getContentPane().add(btnChamar3andar, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 178, 25, 25));
 
-        imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoT2.png"))); // NOI18N
-        getContentPane().add(imgAutomato, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 0, -1, -1));
+        btnChamar1andar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChamar1andarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnChamar1andar, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 648, 25, 25));
+
+        btnChamar2andar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChamar2andarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnChamar2andar, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 413, 25, 25));
+
+        btnChamaTerrer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChamaTerrerActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnChamaTerrer, new org.netbeans.lib.awtextra.AbsoluteConstraints(232, 883, 25, 25));
+
+        imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoA02.png"))); // NOI18N
+        getContentPane().add(imgAutomato, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, -1, -1));
 
         imgElevador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorAberto.png"))); // NOI18N
-        getContentPane().add(imgElevador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 730, -1, -1));
+        getContentPane().add(imgElevador, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 782, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+        imgElevador4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png"))); // NOI18N
+        getContentPane().add(imgElevador4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, -1, -1));
 
         imgElevador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png"))); // NOI18N
-        getContentPane().add(imgElevador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, -1, -1));
+        getContentPane().add(imgElevador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 550, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, -1, -1));
+        imgElevador3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png"))); // NOI18N
+        getContentPane().add(imgElevador3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 312, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/imgPredio.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSubirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubirActionPerformed
-        ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+    private void btnChamar3andarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChamar3andarActionPerformed
+        btnChamaTerrer.setVisible(false);
+        btnChamar1andar.setVisible(false);
+        btnChamar2andar.setVisible(false);
+        btnChamar3andar.setVisible(false);
+        int andar = elevador.getAndares();
+        int andarDest = 3;
         
-        executor.schedule(() -> {
-            // Código a ser executado após 1 segundo
-            imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoT3.png")));
-            imgElevador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorAbrindo.png")));
-        }, 1, TimeUnit.SECONDS);
+        switch (andar){
+            case 0 :{
+               elevador.subirAndares(btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador,imgElevador4);   
+               break;
+            }
+            case 1 :{
+              elevador.subirAndares(btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador2,imgElevador4);              
+              break;
+            }
+            case 2: {
+              elevador.subirAndares(btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador3,imgElevador4);
+              break;
+            }
+            case 3: {
+              System.out.println("Elevador já está nesse andar");
+              btnChamaTerrer.setVisible(true);
+              btnChamar1andar.setVisible(true);
+              btnChamar2andar.setVisible(true);
+              btnChamar3andar.setVisible(true);
+              break;
+            }  
+        }
+        
+        
+        
+    }//GEN-LAST:event_btnChamar3andarActionPerformed
 
-        executor.schedule(() -> {
-            // Código a ser executado após 1 segundo
-            imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoT.png")));
-            imgElevador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png")));
-        }, 2, TimeUnit.SECONDS);
-        executor.schedule(() -> {
-            // Código a ser executado após 1 segundo
-            imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoUP.png")));
-        }, 3, TimeUnit.SECONDS);
-        executor.schedule(() -> {
-            // Código a ser executado após 1 segundo
-            imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/Automato1A.png")));
-        }, 4, TimeUnit.SECONDS);
-        executor.schedule(() -> {
-            // Código a ser executado após 1 segundo
-            imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/Automato1A1.png")));
-            imgElevador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorAbrindo.png")));
-        }, 5, TimeUnit.SECONDS);
-        executor.schedule(() -> {
-            // Código a ser executado após 1 segundo
-            imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/Automato1A2.png")));
-            imgElevador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorAberto.png")));
-        }, 6, TimeUnit.SECONDS);
-            
+    private void btnChamaTerrerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChamaTerrerActionPerformed
+        btnChamaTerrer.setVisible(false);
+        btnChamar1andar.setVisible(false);
+        btnChamar2andar.setVisible(false);
+        btnChamar3andar.setVisible(false);
+        int andar = elevador.getAndares();
+        int andarDest = 0;
 
-    }//GEN-LAST:event_btnSubirActionPerformed
+        switch (andar){
+            case 0 :{
+               System.out.println("Elevador já está nesse andar");
+               btnChamaTerrer.setVisible(true);
+              btnChamar1andar.setVisible(true);
+              btnChamar2andar.setVisible(true);
+              btnChamar3andar.setVisible(true);
+               break;
+            }
+            case 1 :{
+              elevador.descerAndares(btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador2,imgElevador);              
+              break;
+            }
+            case 2: {
+              elevador.descerAndares(btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador3,imgElevador);
+              break;
+            }
+            case 3: {
+              elevador.descerAndares(btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador4,imgElevador);
+              break;
+            }  
+        }
+        
+    }//GEN-LAST:event_btnChamaTerrerActionPerformed
+
+    private void btnChamar2andarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChamar2andarActionPerformed
+       btnChamaTerrer.setVisible(false);
+        btnChamar1andar.setVisible(false);
+        btnChamar2andar.setVisible(false);
+        btnChamar3andar.setVisible(false);
+        int andar = elevador.getAndares();
+        int andarDest = 2;
+        switch (andar){
+            case 0 :{
+               elevador.subirAndares(btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador,imgElevador3); 
+               break;
+            }
+            case 1 :{
+              elevador.subirAndares(btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador2,imgElevador3);              
+              break;
+            }
+            case 2: {
+              System.out.println("Elevador já está nesse andar");  
+              btnChamaTerrer.setVisible(true);
+              btnChamar1andar.setVisible(true);
+              btnChamar2andar.setVisible(true);
+              btnChamar3andar.setVisible(true);
+              break;
+            }
+            case 3: {
+              elevador.descerAndares(btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador4,imgElevador3);
+              break;
+            }  
+        }
+    }//GEN-LAST:event_btnChamar2andarActionPerformed
+
+    private void btnChamar1andarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChamar1andarActionPerformed
+        btnChamaTerrer.setVisible(false);
+        btnChamar1andar.setVisible(false);
+        btnChamar2andar.setVisible(false);
+        btnChamar3andar.setVisible(false);
+        int andar = elevador.getAndares();
+        int andarDest = 1;
+        switch (andar){
+            case 0 :{
+               elevador.subirAndares(btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador,imgElevador2); 
+               break;
+            }
+            case 1 :{
+              System.out.println("Elevador já está nesse andar");  
+              btnChamaTerrer.setVisible(true);
+              btnChamar1andar.setVisible(true);
+              btnChamar2andar.setVisible(true);
+              btnChamar3andar.setVisible(true);
+              break;
+            }
+            case 2: {
+              elevador.descerAndares(btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador3,imgElevador2);
+              break;  
+            }
+            case 3: {
+              elevador.descerAndares(btnChamaTerrer, btnChamar1andar, btnChamar2andar, btnChamar3andar,andar,andarDest, imgAutomato,imgElevador4,imgElevador2);
+              break;
+            }  
+        }
+    }//GEN-LAST:event_btnChamar1andarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -140,11 +260,15 @@ public class TelaElevador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSubir;
+    private javax.swing.JButton btnChamaTerrer;
+    private javax.swing.JButton btnChamar1andar;
+    private javax.swing.JButton btnChamar2andar;
+    private javax.swing.JButton btnChamar3andar;
     private javax.swing.JLabel imgAutomato;
     private javax.swing.JLabel imgElevador;
     private javax.swing.JLabel imgElevador2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel imgElevador3;
+    private javax.swing.JLabel imgElevador4;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
