@@ -15,8 +15,8 @@ public class Elevador {
     private int andares;
      
     
-    
-    public void subirAndares(JButton btnChamaTerrer,JButton btnChamar1andar,JButton btnChamar2andar,JButton btnChamar3andar,
+     
+    public void subirAndares(JLabel ind0,JLabel ind1,JLabel ind2,JLabel ind3,JLabel imgPredio,JButton btnChamaTerrer,JButton btnChamar1andar,JButton btnChamar2andar,JButton btnChamar3andar,
                             int andar,int andarDest, JLabel imgAutomato,JLabel imgElevador1,JLabel imgElevador2){
         int timer = 1;
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
@@ -44,13 +44,17 @@ public class Elevador {
            executor.schedule(() -> {
                System.out.println("/Imagens2/AutomatoA"+ finalI +".png");
                imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoA"+ (finalI+1) +".png")));
-                                                             
+               ind0.setText(String.valueOf(finalI+1));
+                ind1.setText(String.valueOf(finalI+1));
+                ind2.setText(String.valueOf(finalI+1));
+                ind3.setText(String.valueOf(finalI+1));                                              
             }, timer, TimeUnit.SECONDS); 
            timer++;
            if(i == andarDest){
                continue;
            }
-          this.andares++; 
+          this.andares++;
+          
           System.out.println(this.andares);   
         }
         
@@ -64,6 +68,7 @@ public class Elevador {
             // Código a ser executado após 1 segundo
             imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoA" +this.andares + "2.png")));
             imgElevador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorAberto.png")));
+            imgPredio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/imgPredio.png")));
         btnChamaTerrer.setVisible(true);
         btnChamar1andar.setVisible(true);
         btnChamar2andar.setVisible(true);
@@ -72,7 +77,8 @@ public class Elevador {
         timer++; 
           
     }
-    public void descerAndares(JButton btnChamaTerrer,JButton btnChamar1andar,JButton btnChamar2andar,JButton btnChamar3andar,
+    public void descerAndares(JLabel ind0,JLabel ind1,JLabel ind2,JLabel ind3,JLabel imgPredio, 
+                    JButton btnChamaTerrer,JButton btnChamar1andar,JButton btnChamar2andar,JButton btnChamar3andar,
                             int andar,int andarDest, JLabel imgAutomato,JLabel imgElevador1,JLabel imgElevador2){
         int timer = 1;
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
@@ -90,7 +96,7 @@ public class Elevador {
             imgElevador1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorFechado.png")));
         }, timer, TimeUnit.SECONDS);
         timer++;
-        for(int i = andar; i >= andarDest;i--){
+        for(int i = andar; i > andarDest;i--){
             final int finalI = i;
             executor.schedule(() -> {
                imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoDW" + String.valueOf(finalI) +".png")));
@@ -99,17 +105,21 @@ public class Elevador {
            executor.schedule(() -> {
                // Código a ser executado após 1 segundo
                imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoA"+ (finalI-1) +".png")));
-               
+               ind0.setText(String.valueOf(finalI-1));
+               ind1.setText(String.valueOf(finalI-1));
+                ind2.setText(String.valueOf(finalI-1));
+                ind3.setText(String.valueOf(finalI-1));
                
             }, timer, TimeUnit.SECONDS); 
            timer++;
            if(i == andarDest){
                continue;
            }
-          this.andares--;   
+          this.andares--;
+          
           System.out.println(this.andares);          
         }
-        timer -= 2;
+        
         executor.schedule(() -> {
             // Código a ser executado após 1 segundo
             imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoA" +this.andares + "1.png")));
@@ -120,6 +130,7 @@ public class Elevador {
             // Código a ser executado após 1 segundo
             imgAutomato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/AutomatoA" +this.andares + "2.png")));
             imgElevador2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/ElevadorAberto.png")));
+            imgPredio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/imgPredio.png")));
         btnChamaTerrer.setVisible(true);
         btnChamar1andar.setVisible(true);
         btnChamar2andar.setVisible(true);
