@@ -4,6 +4,8 @@
  */
 package Pacote;
 
+import java.awt.Color;
+
 /**
  *
  * @author andre
@@ -15,6 +17,12 @@ public class TelaMenu extends javax.swing.JFrame {
      */
     public TelaMenu() {
         initComponents();
+        setLocationRelativeTo(null);
+        btnVoltar.setVisible(false);
+        btnVoltar.setBackground(new Color(0,0,0,0));
+        btnGrupo.setBackground(new Color(0,0,0,0));
+        btnElevador.setBackground(new Color(0,0,0,0));
+        MaqDoce.setBackground(new Color(0,0,0,0));
     }
 
     /**
@@ -26,42 +34,92 @@ public class TelaMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnVoltar = new javax.swing.JButton();
         btnGrupo = new javax.swing.JButton();
         btnElevador = new javax.swing.JButton();
         MaqDoce = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnGrupo.setText("Grupo");
+        btnVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnVoltarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnVoltarMouseExited(evt);
+            }
+        });
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 288, 110, 40));
+
+        btnGrupo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGrupo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnGrupoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnGrupoMouseExited(evt);
+            }
+        });
         btnGrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGrupoActionPerformed(evt);
             }
         });
-        getContentPane().add(btnGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, -1, -1));
+        getContentPane().add(btnGrupo, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 280, 110, 40));
 
-        btnElevador.setText("Elevador");
+        btnElevador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnElevador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnElevadorMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnElevadorMouseExited(evt);
+            }
+        });
         btnElevador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnElevadorActionPerformed(evt);
             }
         });
-        getContentPane().add(btnElevador, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 170, 140, 30));
+        getContentPane().add(btnElevador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 166, 170, 40));
 
-        MaqDoce.setText("Máquina de doce");
+        MaqDoce.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        MaqDoce.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                MaqDoceMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                MaqDoceMouseExited(evt);
+            }
+        });
         MaqDoce.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 MaqDoceActionPerformed(evt);
             }
         });
-        getContentPane().add(MaqDoce, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 140, 30));
+        getContentPane().add(MaqDoce, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 109, 170, 40));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/imgMenu.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGrupoActionPerformed
-        // TODO add your handling code here:
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/imgGrupo.png")));
+        btnGrupo.setVisible(false);
+        btnElevador.setVisible(false);
+        MaqDoce.setVisible(false);
+        btnVoltar.setVisible(true);
     }//GEN-LAST:event_btnGrupoActionPerformed
 
     private void btnElevadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElevadorActionPerformed
@@ -75,6 +133,46 @@ public class TelaMenu extends javax.swing.JFrame {
         tp.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_MaqDoceActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/imgMenu.png")));
+        btnGrupo.setVisible(true);
+        btnElevador.setVisible(true);
+        MaqDoce.setVisible(true);
+        btnVoltar.setVisible(false);
+    }//GEN-LAST:event_btnVoltarActionPerformed
+
+    private void btnVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVoltarMouseEntered
+        btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/btnVoltar2.png")));
+    }//GEN-LAST:event_btnVoltarMouseEntered
+
+    private void btnVoltarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVoltarMouseExited
+        btnVoltar.setIcon(null);
+    }//GEN-LAST:event_btnVoltarMouseExited
+
+    private void MaqDoceMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MaqDoceMouseEntered
+        MaqDoce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/btnMaquina2.png")));
+    }//GEN-LAST:event_MaqDoceMouseEntered
+
+    private void MaqDoceMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MaqDoceMouseExited
+        MaqDoce.setIcon(null);
+    }//GEN-LAST:event_MaqDoceMouseExited
+
+    private void btnElevadorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnElevadorMouseEntered
+        btnElevador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/btnElevador2.png")));
+    }//GEN-LAST:event_btnElevadorMouseEntered
+
+    private void btnElevadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnElevadorMouseExited
+        btnElevador.setIcon(null);
+    }//GEN-LAST:event_btnElevadorMouseExited
+
+    private void btnGrupoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGrupoMouseEntered
+        btnGrupo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/btnGrupo2.png")));
+    }//GEN-LAST:event_btnGrupoMouseEntered
+
+    private void btnGrupoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGrupoMouseExited
+        btnGrupo.setIcon(null);
+    }//GEN-LAST:event_btnGrupoMouseExited
 
     /**
      * @param args the command line arguments
@@ -115,5 +213,7 @@ public class TelaMenu extends javax.swing.JFrame {
     private javax.swing.JButton MaqDoce;
     private javax.swing.JButton btnElevador;
     private javax.swing.JButton btnGrupo;
+    private javax.swing.JButton btnVoltar;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
