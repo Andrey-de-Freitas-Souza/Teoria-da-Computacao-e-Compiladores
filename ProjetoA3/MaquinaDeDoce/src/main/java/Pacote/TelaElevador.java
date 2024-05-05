@@ -8,10 +8,7 @@ import Entidades.Elevador;
 import java.awt.Color;
 
 
-/**
- *
- * @author andre
- */
+
 public class TelaElevador extends javax.swing.JFrame {
     Elevador elevador = new Elevador();
     public TelaElevador() {
