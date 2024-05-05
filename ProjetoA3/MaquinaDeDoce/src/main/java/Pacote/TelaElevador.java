@@ -15,6 +15,7 @@ import java.awt.Color;
 public class TelaElevador extends javax.swing.JFrame {
     Elevador elevador = new Elevador();
     public TelaElevador() {
+        super("Elevador");
         initComponents();
         setLocationRelativeTo(null);
         btnChamaTerrer.setBackground(new Color(0,0,0,0));
