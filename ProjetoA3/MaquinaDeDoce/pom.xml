@@ -25,4 +25,5 @@
         <maven.compiler.target>20</maven.compiler.target>
         <exec.mainClass>Pacote.TelaMenu</exec.mainClass>
     </properties>
+    <name>ProjetoA3</name>
 </project>

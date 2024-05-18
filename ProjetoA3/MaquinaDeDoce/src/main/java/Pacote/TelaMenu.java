@@ -16,6 +16,7 @@ public class TelaMenu extends javax.swing.JFrame {
      * Creates new form TelaMenu
      */
     public TelaMenu() {
+        super("Menu");
         initComponents();
         setLocationRelativeTo(null);
         btnVoltar.setVisible(false);
@@ -94,6 +95,7 @@ public class TelaMenu extends javax.swing.JFrame {
         });
         getContentPane().add(btnElevador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 166, 170, 40));
 
+        btnAnalisador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/btnAnalisador.png"))); // NOI18N
         btnAnalisador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAnalisador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -108,7 +110,7 @@ public class TelaMenu extends javax.swing.JFrame {
                 btnAnalisadorActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAnalisador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 224, 170, 40));
+        getContentPane().add(btnAnalisador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 223, 170, 40));
 
         MaqDoce.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         MaqDoce.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -137,6 +139,7 @@ public class TelaMenu extends javax.swing.JFrame {
         btnGrupo.setVisible(false);
         btnElevador.setVisible(false);
         MaqDoce.setVisible(false);
+        btnAnalisador.setVisible(false);
         btnVoltar.setVisible(true);
     }//GEN-LAST:event_btnGrupoActionPerformed
 
@@ -156,6 +159,7 @@ public class TelaMenu extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/imgMenu.png")));
         btnGrupo.setVisible(true);
         btnElevador.setVisible(true);
+        btnAnalisador.setVisible(true);
         MaqDoce.setVisible(true);
         btnVoltar.setVisible(false);
     }//GEN-LAST:event_btnVoltarActionPerformed
@@ -193,11 +197,11 @@ public class TelaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGrupoMouseExited
 
     private void btnAnalisadorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAnalisadorMouseEntered
-        // TODO add your handling code here:
+        btnAnalisador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/btnAnalisador2.png")));
     }//GEN-LAST:event_btnAnalisadorMouseEntered
 
     private void btnAnalisadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAnalisadorMouseExited
-        // TODO add your handling code here:
+        btnAnalisador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens2/btnAnalisador.png")));
     }//GEN-LAST:event_btnAnalisadorMouseExited
 
     private void btnAnalisadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalisadorActionPerformed
