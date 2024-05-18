@@ -22,6 +22,7 @@ public class TelaMenu extends javax.swing.JFrame {
         btnVoltar.setBackground(new Color(0,0,0,0));
         btnGrupo.setBackground(new Color(0,0,0,0));
         btnElevador.setBackground(new Color(0,0,0,0));
+        btnAnalisador.setBackground(new Color(0,0,0,0));
         MaqDoce.setBackground(new Color(0,0,0,0));
     }
 
@@ -37,6 +38,7 @@ public class TelaMenu extends javax.swing.JFrame {
         btnVoltar = new javax.swing.JButton();
         btnGrupo = new javax.swing.JButton();
         btnElevador = new javax.swing.JButton();
+        btnAnalisador = new javax.swing.JButton();
         MaqDoce = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -92,6 +94,22 @@ public class TelaMenu extends javax.swing.JFrame {
         });
         getContentPane().add(btnElevador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 166, 170, 40));
 
+        btnAnalisador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAnalisador.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAnalisadorMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAnalisadorMouseExited(evt);
+            }
+        });
+        btnAnalisador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnalisadorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAnalisador, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 224, 170, 40));
+
         MaqDoce.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         MaqDoce.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -123,8 +141,8 @@ public class TelaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGrupoActionPerformed
 
     private void btnElevadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElevadorActionPerformed
-        TelaElevador te = new TelaElevador();
-        te.setVisible(true);
+        TelaAnalisadorLexico tal = new TelaAnalisadorLexico();
+        tal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnElevadorActionPerformed
 
@@ -174,6 +192,20 @@ public class TelaMenu extends javax.swing.JFrame {
         btnGrupo.setIcon(null);
     }//GEN-LAST:event_btnGrupoMouseExited
 
+    private void btnAnalisadorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAnalisadorMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAnalisadorMouseEntered
+
+    private void btnAnalisadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAnalisadorMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAnalisadorMouseExited
+
+    private void btnAnalisadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnalisadorActionPerformed
+        TelaAnalisadorLexico tal = new TelaAnalisadorLexico();
+        tal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAnalisadorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -211,6 +243,7 @@ public class TelaMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton MaqDoce;
+    private javax.swing.JButton btnAnalisador;
     private javax.swing.JButton btnElevador;
     private javax.swing.JButton btnGrupo;
     private javax.swing.JButton btnVoltar;
