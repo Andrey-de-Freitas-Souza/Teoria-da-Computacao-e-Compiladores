@@ -13,6 +13,9 @@ Este repositório é dedicado à entrega de projetos e atividades relacionadas �
 
 <h2> CASE 1 - Modelagem de uma Máquina de Vendas utilizando um Autômato Finito Determinístico
 </h2>
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens/TelaMaquina.png?raw=true">
+</p>
 
 **Resumo:** <br>
 Este documento contém a modelagem utilizada em um sistema de elevador utilizando um AFD (Autômato Finito Determinístico). Na modelagem da máquina, considerou-se um conjunto finito de estados que ela pode assumir de acordo com as diferentes ações que podem ser realizadas pelo usuário. A máquina modelada permite a venda de produtos com três diferentes de preços e ainda permite a devolução de troco ao usuário.
