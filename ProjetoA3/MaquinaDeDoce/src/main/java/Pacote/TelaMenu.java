@@ -141,8 +141,8 @@ public class TelaMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGrupoActionPerformed
 
     private void btnElevadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElevadorActionPerformed
-        TelaAnalisadorLexico tal = new TelaAnalisadorLexico();
-        tal.setVisible(true);
+        TelaElevador te = new TelaElevador();
+        te.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnElevadorActionPerformed
 
