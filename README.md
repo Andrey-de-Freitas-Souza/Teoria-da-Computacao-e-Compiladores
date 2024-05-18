@@ -11,22 +11,21 @@ Este repositório é dedicado à entrega de projetos e atividades relacionadas �
 - Gabrielle Garcia Paz (RA: 823126085)<br>
 - Webster Diógenes Rodrigues (RA: 8222242764)<br>
 
-<h2> CASE 1 - Modelagem de uma Máquina de Vendas utilizando um Autômato Finito Determinístico
+<h2> CASE 1 - Modelagem de uma Máquina de Doces utilizando um Autômato Finito Determinístico
 </h2>
 <p align="center">
 <img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens/TelaMaquina.png?raw=true">
 </p>
 
 **Resumo:** <br>
-Este documento contém a modelagem utilizada em um sistema de elevador utilizando um AFD (Autômato Finito Determinístico). Na modelagem da máquina, considerou-se um conjunto finito de estados que ela pode assumir de acordo com as diferentes ações que podem ser realizadas pelo usuário. A máquina modelada permite a venda de produtos com três diferentes de preços e ainda permite a devolução de troco ao usuário.
+Este documento contém a modelagem utilizada em um sistema de uma máquina de doces utilizando um AFD (Autômato Finito Determinístico). Na modelagem da máquina, considerou-se um conjunto finito de estados que ela pode assumir de acordo com as diferentes ações que podem ser realizadas pelo usuário. A máquina modelada permite a venda de doces com três diferentes de preços e ainda permite a devolução de troco ao usuário.
 
 
 **Introdução:** <br>
-A máquina modelada neste trabalho possui uma limitação de saldo de R$ 10,00. Ela aceita notas de R$ 2,00 e R$ 5,00 e moedas de R$ 1,00, além de permitir a venda de produtos com preços de R$ 6,00 , R$ 7,00 ou R$ 8,00. A inserção de moedas e escolha do produto, estão associadas as funções de transição do autômato desenvolvido, cada ação leva a uma transição para um estado diferente, onde estado define quais ações o usuário poderá fazer a seguir.
+A máquina modelada neste trabalho possui uma limitação de saldo de R$ 10,00. Ela aceita notas de R$ 2,00 e R$ 5,00 e moedas de R$ 1,00, além de permitir a venda de doces com preços de R$ 6,00 , R$ 7,00 ou R$ 8,00. A inserção de moedas e escolha do doce, estão associadas as funções de transição do autômato desenvolvido, cada ação leva a uma transição para um estado diferente, onde estado define quais ações o usuário poderá fazer a seguir.
 
 
 **Modelagem do Sistema:** <br>
-A máquina modelada neste trabalho possui uma limitação de saldo de R$ 10,00. Ela aceita notas de R$ 2,00 e R$ 5,00 e moedas de R$ 1,00, além de permitir a venda de produtos com preços de R$ 6,00 , R$ 7,00 ou R$ 8,00. A inserção de moedas e escolha do produto, estão associadas as funções de transição do autômato desenvolvido, cada ação leva a uma transição para um estado diferente, onde estado define quais ações o usuário poderá fazer a seguir.
 
 1 - Alfabeto de entrada - ∑: é um conjunto de símbolos, onde cada um destes símbolos está associado a uma ação realizada pelo usuário.
 
@@ -47,7 +46,7 @@ A máquina modelada neste trabalho possui uma limitação de saldo de R$ 10,00. 
 situação em que o usuário da máquina ainda não realizou a inserção qualquer moeda na mesma.
 
 5 -	Conjunto de estados finais - F: O conjunto de estados finais deve sempre ser um
-subconjunto de Q. No sistema aqui descrito, os elementos deste conjunto são d1, d2 e d3, e representam a situação onde o usuário já inseriu moedas suficientes para a compra de produtos com os preços R$ 6,00 , R$ 7,00 ou R$ 8,00 e já optou pela produto desejado.
+subconjunto de Q. No sistema aqui descrito, os elementos deste conjunto são d1, d2 e d3, e representam a situação onde o usuário já inseriu moedas suficientes para a compra de doces com os preços R$ 6,00 , R$ 7,00 ou R$ 8,00 e já optou pelo doce desejado.
 
 <p align = "center">
   F = {d1, d2, d3}
@@ -61,8 +60,9 @@ Imagem 1 - Diagrama de Transições do sistema modelado.
 
  <h2> CASE 2 - Modelagem de um Sistema de elevador utilizando um Autômato Finito Determinístico
 </h2>
-
-
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens2/TelaElevador.png?raw=true">
+</p>
 
 
 ## Contato
