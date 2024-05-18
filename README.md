@@ -64,6 +64,48 @@ Imagem 1 - Diagrama de Transições do sistema modelado.
 <img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens2/TelaElevador.png?raw=true">
 </p>
 
+**Resumo:** <br>
+Este documento contém a modelagem utilizada em um sistema de elevador utilizando um AFD (Autômato Finito Determinístico). Na modelagem da máquina, considerou-se um conjunto finito de estados que ela pode assumir de acordo com as necessidades de operações que o elevador tem para atender as solicitações realizadas pelo usuário. A máquina modelada permite o usuário chamar o elevador em qualquer um dos andares, além de permitir a escolha de qualquer um dos andares como destino.
+
+
+**Introdução:** <br>
+A máquina modelada neste trabalho possui uma limitação que só permite o elevador se mover com as portas fechadas. Ela aceita um alfabeto que representa as ações do elevador afim de atender a solicitação de ir à algum andar solicitado pelo usuário, além de permitir que o usuário chame o elevador para chegar em algum outro destino. As ações realizadas pelo elevador estão associadas as funções de transição do autômato desenvolvido, cada ação leva a uma transição para um estado diferente, onde estado define quais ações o elevador poderá fazer a seguir.
+
+
+**Modelagem do Sistema:** <br>
+
+1 - Alfabeto de entrada - ∑: é um conjunto de símbolos, onde cada um destes símbolos está associado a uma ação realizada pelo elevador.
+
+<p align="center"> ∑ = {a, c, e, o, n, u, p, d ,w} </p>
+
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens2/Transicoes.png?raw=true"><br>
+</p>
+
+2 -	Conjunto de estados possíveis do sistema - Q: os elementos deste conjunto correspondem aos diferentes estados que a máquina pode assumir a medida em que o elevador realiza ações.
+<p align="center"> Q = {T, T1, T2, T3, UP, DW, 1A ,1A1 ,1A2 ,1A3, UP2, DW2, 
+  2A, 2A1, 2A2, 2A3, UP3, DW3, 3A, 3A1 ,3A2, 3A3} </p>
+  
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens2/Estados.png?raw=true"><br>
+</p>
+
+3 -	Função programa - δ: esta função leva um par formado por um estado e uma ação do elevador para um novo estado. As transições realizadas por esta função podem ser visualizadas na imagem 1.
+
+4 -	Estado inicial - q0: o estado inicial deste sistema é o estado T2, que representa a
+situação em que o elevador se encontra no térreo de portas abertas.
+
+
+<p align = "center">
+  F = {d1, d2, d3}
+</p>
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens2/Automato.png?raw=true"><br>
+</p>
+<h3 align = "center">
+Imagem 1 - Diagrama de Transições do sistema modelado.
+ </h3> <br>
+
 
 ## Contato
 
