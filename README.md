@@ -61,8 +61,9 @@ Imagem 1 - Diagrama de Transições do sistema modelado.
 
  <h2> CASE 2 - Modelagem de um Sistema de elevador utilizando um Autômato Finito Determinístico
 </h2>
-
-
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens2/TelaElevador.png?raw=true">
+</p>
 
 
 ## Contato
