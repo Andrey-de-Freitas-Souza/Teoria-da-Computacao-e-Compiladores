@@ -1,15 +1,7 @@
 <h1> Teoria da Computação e Compiladores
 </h1>
 Este repositório é dedicado à entrega de projetos e atividades relacionadas à disciplina de Teoria da Computação e Compiladores.
-<h3>Grupo:</h3>
-- Rafael Rossetto Guitarrari (RA: 823158602) <br>
-- Andrey de Freitas Souza (RA: 823217536) <br>
-- Gabriel Farah De Lima (RA: 822231424) <br>
-- Fabrício de Barros Narbon (RA: 822227166)<br>
-- Bianca Alves Ribeiro (RA: 8222240261)<br>
-- Luiz Gustavo França de Abreu (RA: 823210075)<br>
-- Gabrielle Garcia Paz (RA: 823126085)<br>
-- Webster Diógenes Rodrigues (RA: 8222242764)<br>
+
 
 <h2> CASE 1 - Modelagem de uma Máquina de Doces utilizando um Autômato Finito Determinístico
 </h2>
@@ -108,6 +100,16 @@ Imagem 1 - Diagrama de Transições do sistema modelado.
  
 <h2> CASE 3 - Criação de Analisador Léxico
 </h2>
+
+<h3>Grupo:</h3>
+- Rafael Rossetto Guitarrari (RA: 823158602) <br>
+- Andrey de Freitas Souza (RA: 823217536) <br>
+- Gabriel Farah De Lima (RA: 822231424) <br>
+- Fabrício de Barros Narbon (RA: 822227166)<br>
+- Bianca Alves Ribeiro (RA: 8222240261)<br>
+- Luiz Gustavo França de Abreu (RA: 823210075)<br>
+- Gabrielle Garcia Paz (RA: 823126085)<br>
+- Webster Diógenes Rodrigues (RA: 8222242764)<br>
 
 ## Contato
 
