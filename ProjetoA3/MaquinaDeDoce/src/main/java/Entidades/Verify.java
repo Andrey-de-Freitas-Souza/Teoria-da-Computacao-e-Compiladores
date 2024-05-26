@@ -64,9 +64,7 @@ public class Verify {
     tokensFinal = (tokensFinal.replaceAll("\\s+", "")).replace("||", "|\n|");
     return tokensFinal;
     }
-    public String compilar(){
-        return "";
-    }
+    
     
     
 }

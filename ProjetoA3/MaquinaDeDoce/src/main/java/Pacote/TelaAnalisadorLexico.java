@@ -47,6 +47,8 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
         pnlTokens.getViewport().setOpaque(false); // Tornando a JViewport transparente
         pnlTokens.setBackground(new Color(0, 0, 0, 0));
         pnlTokens.setForeground(new Color(0, 0, 0, 0));
+        btnPesq.setBackground(new Color(0,0,0,0));
+        btnDoc.setBackground(new Color(0,0,0,0));
     }
 
     /**
@@ -58,6 +60,8 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnDoc = new javax.swing.JButton();
+        btnPesq = new javax.swing.JButton();
         btnValidar = new javax.swing.JButton();
         pnlTokens = new javax.swing.JScrollPane();
         txtTokens = new javax.swing.JLabel();
@@ -70,6 +74,28 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnDoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnDoc.png"))); // NOI18N
+        btnDoc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnDocMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnDocMouseExited(evt);
+            }
+        });
+        getContentPane().add(btnDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(554, 636, 210, 70));
+
+        btnPesq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnPesq.png"))); // NOI18N
+        btnPesq.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnPesqMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnPesqMouseExited(evt);
+            }
+        });
+        getContentPane().add(btnPesq, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 636, 210, 70));
 
         btnValidar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnValidar.png"))); // NOI18N
         btnValidar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -161,7 +187,44 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
             codigoTokens = codigo.toString();
             String codigoFinal = codigo.toString();
             for (KeyWords kw : keywords) {
-                if(!kw.getLexema().equals("\\<") && !kw.getLexema().equals("\\>")&& !kw.getLexema().equals("\\/")
+                boolean check4 = kw.getLexema().equals("\\<") || kw.getLexema().equals("\\>")|| kw.getLexema().equals("\\/")
+                || kw.getLexema().equals("\\<=") || kw.getLexema().equals("\\>=") || kw.getLexema().equals("\\>") ||
+                   kw.getLexema().equals("\\/")     ;
+                System.out.println(check4);
+                if(check4){
+                    codigoFinal = codigoFinal.replaceAll("\\<","&lt");
+                    codigoFinal = codigoFinal.replaceAll("\\>","&gt");
+                    codigoFinal = codigoFinal.replaceAll("\\>=","&gt=");
+                    codigoFinal = codigoFinal.replaceAll("\\<=","&lt=");
+
+                }
+                
+
+                boolean check1 = codigoFinal.contains(kw.getLexema()+"(")||codigoFinal.contains(kw.getLexema()+"[")||
+                        codigoFinal.contains(kw.getLexema()+"{")|| codigoFinal.contains(kw.getLexema()+" ") ;
+                boolean check2 = kw.getNome().contains("|KW_CONDICIONAL_")||kw.getNome().contains("|KW_REPETICAO_")||
+                        kw.getNome().contains("|IDENTIFICADOR_")|| kw.getNome().contains("|KW_DECLARACAO_");
+                boolean check3 = check1 && check2;
+                
+                System.out.println(kw.getLexema()+" "+check3);
+                if(check3){
+                    codigoFinal = codigoFinal.replaceAll(kw.getLexema()+" ","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+" </font>");
+                    codigoFinal = codigoFinal.replaceAll(kw.getLexema()+"\\(","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"(</font>");
+                    codigoFinal = codigoFinal.replaceAll(kw.getLexema()+"\\[","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"[</font>");
+                    codigoFinal = codigoFinal.replaceAll(kw.getLexema()+"\\{","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"{</font>");
+                }
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                /*if(!kw.getLexema().equals("\\<") && !kw.getLexema().equals("\\>")&& !kw.getLexema().equals("\\/")
                 && !kw.getLexema().equals("\\<=") && !kw.getLexema().equals("\\>=") && !kw.getLexema().equals("\\>"))
                 codigoFinal = codigoFinal.replaceAll(kw.getLexema(),"<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"</font>");
                 else if(kw.getLexema().equals("\\>")){
@@ -169,10 +232,21 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
                 }
                 else if(kw.getLexema().equals("\\<")){
                  codigoFinal = codigoFinal.replaceAll(kw.getLexema(),"&lt");
-                }
+                }*/
                 
             }        
-                       
+
+            codigoFinal = codigoFinal.replaceAll("\\(","<font color='#ffd710'>\\(</font>");
+            codigoFinal = codigoFinal.replaceAll("\\)","<font color='#ffd710'>\\)</font>");
+            codigoFinal = codigoFinal.replaceAll("\\[","<font color='#ffd710'>\\[</font>");
+            codigoFinal = codigoFinal.replaceAll("\\]","<font color='#ffd710'>\\]</font>");
+            codigoFinal = codigoFinal.replaceAll("\\{","<font color='#ffd710'>\\{</font>");
+            codigoFinal = codigoFinal.replaceAll("\\}","<font color='#ffd710'>\\}</font>"); 
+            codigoFinal = codigoFinal.replaceAll("\\+","<font color='#ff79c6'>\\+</font>");
+            codigoFinal = codigoFinal.replaceAll("\\-","<font color='ff79c6'>\\-</font>");
+            codigoFinal = codigoFinal.replaceAll("\\*","<font color='ff79c6'>\\*</font>");
+     
+            
             codigoFinal = "<html><pre>"+codigoFinal+"</pre></html>";
 
             
@@ -213,6 +287,22 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
         btnValidar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnValidar.png")));
     }//GEN-LAST:event_btnValidarMouseExited
 
+    private void btnPesqMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPesqMouseEntered
+        btnPesq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnPesq2.png")));
+    }//GEN-LAST:event_btnPesqMouseEntered
+
+    private void btnPesqMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPesqMouseExited
+        btnPesq.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnPesq.png")));
+    }//GEN-LAST:event_btnPesqMouseExited
+
+    private void btnDocMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDocMouseEntered
+        btnDoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnDoc2.png")));
+    }//GEN-LAST:event_btnDocMouseEntered
+
+    private void btnDocMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDocMouseExited
+        btnDoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnDoc.png")));
+    }//GEN-LAST:event_btnDocMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -251,6 +341,8 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnArquivo;
+    private javax.swing.JButton btnDoc;
+    private javax.swing.JButton btnPesq;
     private javax.swing.JButton btnValidar;
     private javax.swing.JLabel imgFundo;
     private javax.swing.JScrollPane pnlCodigo;
