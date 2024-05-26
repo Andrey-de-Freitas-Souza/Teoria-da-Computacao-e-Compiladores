@@ -3,18 +3,50 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Pacote;
-
+import Entidades.KeyWords;
+import Entidades.Verify;
+import java.awt.Color;
+import java.util.List;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Pattern;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  *
  * @author andre
  */
 public class TelaAnalisadorLexico extends javax.swing.JFrame {
-
-    /**
-     * Creates new form AnalisadorLexico
-     */
+    String codigoTokens;
+    public static int countOccurrences(String linha, String lexema) {
+    int count = 0;
+    int lastIndex = 0;
+    while ((lastIndex = linha.indexOf(lexema, lastIndex)) != -1) {
+        count++;
+        lastIndex += lexema.length();
+    }
+    return count;
+}
     public TelaAnalisadorLexico() {
+        super("Analisador Léxico");  
         initComponents();
+
+        setLocationRelativeTo(null);
+        btnArquivo.setBackground(new Color(0,0,0,0));
+        btnValidar.setBackground(new Color(0,0,0,0));
+        pnlCodigo.setOpaque(false); // Tornando o JScrollPane transparente
+        pnlCodigo.getViewport().setOpaque(false); // Tornando a JViewport transparente
+        pnlCodigo.setBackground(new Color(0, 0, 0, 0));
+        pnlCodigo.setForeground(new Color(0, 0, 0, 0));
+        pnlTokens.setOpaque(false); // Tornando o JScrollPane transparente
+        pnlTokens.getViewport().setOpaque(false); // Tornando a JViewport transparente
+        pnlTokens.setBackground(new Color(0, 0, 0, 0));
+        pnlTokens.setForeground(new Color(0, 0, 0, 0));
     }
 
     /**
@@ -26,21 +58,160 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btnValidar = new javax.swing.JButton();
+        pnlTokens = new javax.swing.JScrollPane();
+        txtTokens = new javax.swing.JLabel();
+        pnlCodigo = new javax.swing.JScrollPane();
+        txtCodigo = new javax.swing.JLabel();
+        btnArquivo = new javax.swing.JButton();
+        txtFile = new javax.swing.JLabel();
+        imgFundo = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnValidar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnValidar.png"))); // NOI18N
+        btnValidar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnValidarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnValidarMouseExited(evt);
+            }
+        });
+        btnValidar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnValidarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnValidar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 636, 210, 70));
+
+        pnlTokens.setBackground(new java.awt.Color(0, 0, 0));
+        pnlTokens.setBorder(null);
+        pnlTokens.setToolTipText("");
+        pnlTokens.setEnabled(false);
+        pnlTokens.setFocusable(false);
+        pnlTokens.setOpaque(false);
+        pnlTokens.setRequestFocusEnabled(false);
+        pnlTokens.setVerifyInputWhenFocusTarget(false);
+
+        txtTokens.setBackground(new java.awt.Color(255, 255, 255));
+        txtTokens.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtTokens.setForeground(new java.awt.Color(255, 255, 255));
+        pnlTokens.setViewportView(txtTokens);
+
+        getContentPane().add(pnlTokens, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 252, 575, 360));
+
+        pnlCodigo.setBackground(new java.awt.Color(0, 0, 0));
+        pnlCodigo.setBorder(null);
+        pnlCodigo.setToolTipText("");
+        pnlCodigo.setEnabled(false);
+        pnlCodigo.setFocusable(false);
+        pnlCodigo.setOpaque(false);
+        pnlCodigo.setRequestFocusEnabled(false);
+        pnlCodigo.setVerifyInputWhenFocusTarget(false);
+
+        txtCodigo.setBackground(new java.awt.Color(255, 255, 255));
+        txtCodigo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtCodigo.setForeground(new java.awt.Color(255, 255, 255));
+        pnlCodigo.setViewportView(txtCodigo);
+
+        getContentPane().add(pnlCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 252, 575, 360));
+
+        btnArquivo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnArquivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnArquivoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnArquivo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 580, 50));
+
+        txtFile.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        txtFile.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(txtFile, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 144, 520, 40));
+
+        imgFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/imgAnalisador.png"))); // NOI18N
+        getContentPane().add(imgFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnArquivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArquivoActionPerformed
+       JFileChooser expArquivos = new JFileChooser();
+        expArquivos.setDialogTitle("Explorador");
+        expArquivos.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Texto", "txt");
+        expArquivos.setFileFilter(filter);
+        int retorno = expArquivos.showOpenDialog(this);
+        
+        KeyWords[] keywords = KeyWords.values();
+        if (retorno == JFileChooser.APPROVE_OPTION) {
+            StringBuilder codigo = new StringBuilder();
+             
+            try {
+                File file = expArquivos.getSelectedFile();
+                Path path = file.toPath();
+                txtFile.setText(path.toString());
+                List<String> linhas = Files.readAllLines(path);
+                for (String linha : linhas) {
+                    codigo.append(linha).append("\n");
+                }
+                
+            codigoTokens = codigo.toString();
+            String codigoFinal = codigo.toString();
+            for (KeyWords kw : keywords) {
+                if(!kw.getLexema().equals("\\<") && !kw.getLexema().equals("\\>")&& !kw.getLexema().equals("\\/")
+                && !kw.getLexema().equals("\\<=") && !kw.getLexema().equals("\\>=") && !kw.getLexema().equals("\\>"))
+                codigoFinal = codigoFinal.replaceAll(kw.getLexema(),"<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"</font>");
+                else if(kw.getLexema().equals("\\>")){
+                 codigoFinal = codigoFinal.replaceAll(kw.getLexema(),"&gt");
+                }
+                else if(kw.getLexema().equals("\\<")){
+                 codigoFinal = codigoFinal.replaceAll(kw.getLexema(),"&lt");
+                }
+                
+            }        
+                       
+            codigoFinal = "<html><pre>"+codigoFinal+"</pre></html>";
+
+            
+            System.out.println(codigoFinal);
+
+            
+            txtCodigo.setText(codigoFinal);
+            
+    } catch (IOException ex) {
+        Logger.getLogger(TelaAnalisadorLexico.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+        
+    }//GEN-LAST:event_btnArquivoActionPerformed
+
+    private void btnValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidarActionPerformed
+        StringBuilder tokens = new StringBuilder();
+        Verify compilador = new Verify();
+        KeyWords[] keywords = KeyWords.values();
+        String txtPronto = compilador.iniciaCompilador(codigoTokens,keywords);
+        for(KeyWords kw: keywords){
+            txtPronto = txtPronto.replace(kw.getNome(),"<font color='"+ kw.getHtml()+"'>"+kw.getNome()+"</font>");
+        }  
+        System.out.println(txtPronto);
+        tokens.append(txtPronto);
+              
+        tokens.insert(0, "<html><pre>");
+        tokens.append("</pre></html>");
+        System.out.println(tokens.toString());
+        txtTokens.setText(tokens.toString());
+    }//GEN-LAST:event_btnValidarActionPerformed
+
+    private void btnValidarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnValidarMouseEntered
+        btnValidar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnValidar2.png")));
+    }//GEN-LAST:event_btnValidarMouseEntered
+
+    private void btnValidarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnValidarMouseExited
+        btnValidar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnValidar.png")));
+    }//GEN-LAST:event_btnValidarMouseExited
 
     /**
      * @param args the command line arguments
@@ -79,5 +250,13 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnArquivo;
+    private javax.swing.JButton btnValidar;
+    private javax.swing.JLabel imgFundo;
+    private javax.swing.JScrollPane pnlCodigo;
+    private javax.swing.JScrollPane pnlTokens;
+    private javax.swing.JLabel txtCodigo;
+    private javax.swing.JLabel txtFile;
+    private javax.swing.JLabel txtTokens;
     // End of variables declaration//GEN-END:variables
 }
