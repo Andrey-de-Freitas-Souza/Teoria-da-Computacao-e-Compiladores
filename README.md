@@ -98,9 +98,11 @@ situação em que o elevador se encontra no térreo de portas abertas.
 Imagem 1 - Diagrama de Transições do sistema modelado.
  </h3> <br>
  
-<h2> CASE 3 - Criação de Analisador Léxico
+<h2> CASE 3 - Criação de um Analisador Léxico
 </h2>
-
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/imagens3/imgAnalisadorGit.png?raw=true">
+</p>
 <h3>Grupo:</h3>
 - Rafael Rossetto Guitarrari (RA: 823158602) <br>
 - Andrey de Freitas Souza (RA: 823217536) <br>
