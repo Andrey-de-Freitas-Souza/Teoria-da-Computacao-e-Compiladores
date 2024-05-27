@@ -2,33 +2,6 @@ package Entidades;
 
 public enum KeyWords {
     //OPERADORES RELACIONAIS
-    MAIOR("\\>","|OPERADOR_REL_MAIOR|","#ff79c6"," \\> "),
-    MENOR("\\<","|OPERADOR_REL_MENOR|","#ff79c6"," \\< "),
-    MAIOR_IGUAL("\\>=","|OPERADOR_REL_MAIGUAL|","#ff79c6"," \\>= "),
-    MENOR_IGUAL("\\<=","|OPERADOR_REL_MEIGUAL|","#ff79c6"," \\<= "),
-    
-    
-    
-    RECEBE("\\=","|OPERADOR_REL_RECE|","#ff79c6"," \\= "),
-    IGUAL("\\==","|OPERADOR_REL_IGUAL|","#ff79c6"," \\== "),
-    DIFERENTE("\\!","|OPERADOR_REL_DIF|","#ff79c6"," \\!= "),
-    
-    //DELIMITADORES:
-    PONTO_VIRGULA(";","|DELIMITADOR_PONTOVIRGULA|","white"," ; "),
-    VIRGULA(",","|DELIMITADOR_VIRGULA|","white"," , "),
-    //CARACTERES ESPECIAIS
-    PARENTESEA("\\(","|CARACTER_ESP_APAR|","#ffd710"," \\( "),
-    PARENTESEB("\\)","|CARACTER_ESP_FPAR|","#ffd710"," \\) "),
-    COLCHETEA("\\[","|CARACTER_ESP_ACOL|","#ffd710"," \\[ "),
-    COLCHETEB("\\]","|CARACTER_ESP_FCOL|","#ffd710"," \\] "),
-    CHAVEA("\\{","|CARACTER_ESP_ACHAVE|","#ffd710","\\{"),
-    CHAVEB("\\}","|CARACTER_ESP_FCHAVE|","#ffd710","\\}"),    
-    //OPERADORES ARITMÉTICOS
-    MULTIPLICACAO("\\*","|OPERADOR_MAT_MULT|","ff79c6"," \\* "),
-    DIVISAO("\\/","|OPERADOR_MAT_DIV|","ff79c6"," \\/ "),
-    ADICAO("\\+","|OPERADOR_MAT_ADC|","ff79c6"," \\+ "),
-    SUBTRACAO("\\-","|OPERADOR_MAT_SUB|","ff79c6"," \\- "),
-    //TIPOS:
     INT("int","|KW_DECLARACAO_INT|","#8be9fd", " int "), 
     DOUBLE("double","|KW_DECLARACAO_DBL|","#8be9fd"," double "), 
     STRING("String","|KW_DECLARACAO_STR|","white"," String "),
@@ -43,7 +16,33 @@ public enum KeyWords {
     VOID("void","|IDENTIFICADOR_VOID|","#8be9fd"," void "),
     MAIN("main","|IDENTIFICADOR_MAIN|","#3fca3c"," main "),
     PACKAGE("package","|IDENTIFICADOR_PACK|","#F75200"," package "),
-    RETURN("return","|IDENTIFICADOR_RET|","#F75200"," return ")
+    RETURN("return","|IDENTIFICADOR_RET|","#F75200"," return "),
+    MAIOR_IGUAL("&gt&#61","|OPERADOR_REL_MAIGUAL|","#ff79c6"," &gt&#61 "),
+    MENOR_IGUAL("&lt&#61","|OPERADOR_REL_MEIGUAL|","#ff79c6"," &lt&#61 "),
+    MAIOR("&gt","|OPERADOR_REL_MAIOR|","#ff79c6"," &gt "),
+    MENOR("&lt","|OPERADOR_REL_MENOR|","#ff79c6"," &lt "),
+       
+    IGUAL("&#61&#61","|OPERADOR_REL_IGUAL|","#ff79c6"," &#61&#61 "),
+    RECEBE("&#61","|OPERADOR_REL_RECE|","#ff79c6"," &#61 "), 
+    DIFERENTE("&#33","|OPERADOR_REL_DIF|","#ff79c6"," &#33 "),
+    
+    //DELIMITADORES:
+    PONTO_VIRGULA("&#59","|DELIMITADOR_PONTOVIRGULA|","white"," &#59 "),
+    VIRGULA("&#44","|DELIMITADOR_VIRGULA|","white"," &#44 "),
+    //CARACTERES ESPECIAIS
+    PARENTESEA("&#40","|CARACTER_ESP_APAR|","#ffd710"," &#40 "),
+    PARENTESEB("&#41","|CARACTER_ESP_FPAR|","#ffd710"," &#41 "),
+    COLCHETEA("&#91","|CARACTER_ESP_ACOL|","#ffd710"," &#91 "),
+    COLCHETEB("&#93","|CARACTER_ESP_FCOL|","#ffd710"," &#93 "),
+    CHAVEA("&#123","|CARACTER_ESP_ACHAVE|","#ffd710"," &#123 "),
+    CHAVEB("&#125","|CARACTER_ESP_FCHAVE|","#ffd710"," &#125 "),    
+    //OPERADORES ARITMÉTICOS
+    MULTIPLICACAO("&#42","|OPERADOR_MAT_MULT|","ff79c6"," &#42 "),
+    DIVISAO("&#47","|OPERADOR_MAT_DIV|","ff79c6"," &#47 "),
+    ADICAO("&#43","|OPERADOR_MAT_ADC|","ff79c6"," &#43 "),
+    SUBTRACAO("&#45","|OPERADOR_MAT_SUB|","ff79c6"," &#45 ")
+    //TIPOS:
+    
 
     ;
     

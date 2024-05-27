@@ -173,8 +173,7 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
         
         KeyWords[] keywords = KeyWords.values();
         if (retorno == JFileChooser.APPROVE_OPTION) {
-            StringBuilder codigo = new StringBuilder();
-             
+            StringBuilder codigo = new StringBuilder(); 
             try {
                 File file = expArquivos.getSelectedFile();
                 Path path = file.toPath();
@@ -184,76 +183,50 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
                     codigo.append(linha).append("\n");
                 }
                 
-            codigoTokens = codigo.toString();
-            String codigoFinal = codigo.toString();
+            
+
+            String codigoHtml = codigo.toString();
+            codigoHtml = codigoHtml.replaceAll("\\<", "&lt");
+            codigoHtml = codigoHtml.replaceAll("\\>", "&gt");
+            codigoHtml = codigoHtml.replaceAll("\\=", "&#61");
+            codigoHtml = codigoHtml.replaceAll("\\!", "&#33");
+            codigoHtml = codigoHtml.replaceAll("\\;", "&#59");
+            codigoHtml = codigoHtml.replaceAll("\\,", "&#44");
+            codigoHtml = codigoHtml.replaceAll("\\(", "&#40");
+            codigoHtml = codigoHtml.replaceAll("\\)", "&#41");
+            codigoHtml = codigoHtml.replaceAll("\\[", "&#91");
+            codigoHtml = codigoHtml.replaceAll("\\]", "&#93");
+            codigoHtml = codigoHtml.replaceAll("\\{", "&#123");
+            codigoHtml = codigoHtml.replaceAll("\\}", "&#125");
+            codigoHtml = codigoHtml.replaceAll("\\*", "&#42");
+            codigoHtml = codigoHtml.replaceAll("\\/", "&#47");
+            codigoHtml = codigoHtml.replaceAll("\\+", "&#43");
+            codigoHtml = codigoHtml.replaceAll("\\-", "&#45");
+            codigoTokens = codigoHtml;
+ ;
             for (KeyWords kw : keywords) {
-                boolean check4 = kw.getLexema().equals("\\<") || kw.getLexema().equals("\\>")|| kw.getLexema().equals("\\/")
-                || kw.getLexema().equals("\\<=") || kw.getLexema().equals("\\>=") || kw.getLexema().equals("\\>") ||
-                   kw.getLexema().equals("\\/")     ;
-                System.out.println(check4);
-                if(check4){
-                    codigoFinal = codigoFinal.replaceAll("\\<","&lt");
-                    codigoFinal = codigoFinal.replaceAll("\\>","&gt");
-                    codigoFinal = codigoFinal.replaceAll("\\>=","&gt=");
-                    codigoFinal = codigoFinal.replaceAll("\\<=","&lt=");
-
-                }
-                
-
-                boolean check1 = codigoFinal.contains(kw.getLexema()+"(")||codigoFinal.contains(kw.getLexema()+"[")||
-                        codigoFinal.contains(kw.getLexema()+"{")|| codigoFinal.contains(kw.getLexema()+" ") ;
+                boolean check1 = codigoHtml.contains(kw.getLexema()+"&#40")||codigoHtml.contains(kw.getLexema()+"&#91")||
+                        codigoHtml.contains(kw.getLexema()+"&#123")|| codigoHtml.contains(kw.getLexema()+" ") ;
                 boolean check2 = kw.getNome().contains("|KW_CONDICIONAL_")||kw.getNome().contains("|KW_REPETICAO_")||
                         kw.getNome().contains("|IDENTIFICADOR_")|| kw.getNome().contains("|KW_DECLARACAO_");
                 boolean check3 = check1 && check2;
-                
-                System.out.println(kw.getLexema()+" "+check3);
+    
                 if(check3){
-                    codigoFinal = codigoFinal.replaceAll(kw.getLexema()+" ","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+" </font>");
-                    codigoFinal = codigoFinal.replaceAll(kw.getLexema()+"\\(","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"(</font>");
-                    codigoFinal = codigoFinal.replaceAll(kw.getLexema()+"\\[","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"[</font>");
-                    codigoFinal = codigoFinal.replaceAll(kw.getLexema()+"\\{","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"{</font>");
+                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+" ","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+" </font>");
+                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+"&#40","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"&#40</font>");
+                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+"&#91","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"&#91</font>");
+                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+"&#123","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"&#123</font>");
                 }
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                /*if(!kw.getLexema().equals("\\<") && !kw.getLexema().equals("\\>")&& !kw.getLexema().equals("\\/")
-                && !kw.getLexema().equals("\\<=") && !kw.getLexema().equals("\\>=") && !kw.getLexema().equals("\\>"))
-                codigoFinal = codigoFinal.replaceAll(kw.getLexema(),"<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"</font>");
-                else if(kw.getLexema().equals("\\>")){
-                 codigoFinal = codigoFinal.replaceAll(kw.getLexema(),"&gt");
+                else{
+                    codigoHtml = codigoHtml.replaceAll(kw.getLexema(),"<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"</font>");
                 }
-                else if(kw.getLexema().equals("\\<")){
-                 codigoFinal = codigoFinal.replaceAll(kw.getLexema(),"&lt");
-                }*/
-                
-            }        
-
-            codigoFinal = codigoFinal.replaceAll("\\(","<font color='#ffd710'>\\(</font>");
-            codigoFinal = codigoFinal.replaceAll("\\)","<font color='#ffd710'>\\)</font>");
-            codigoFinal = codigoFinal.replaceAll("\\[","<font color='#ffd710'>\\[</font>");
-            codigoFinal = codigoFinal.replaceAll("\\]","<font color='#ffd710'>\\]</font>");
-            codigoFinal = codigoFinal.replaceAll("\\{","<font color='#ffd710'>\\{</font>");
-            codigoFinal = codigoFinal.replaceAll("\\}","<font color='#ffd710'>\\}</font>"); 
-            codigoFinal = codigoFinal.replaceAll("\\+","<font color='#ff79c6'>\\+</font>");
-            codigoFinal = codigoFinal.replaceAll("\\-","<font color='ff79c6'>\\-</font>");
-            codigoFinal = codigoFinal.replaceAll("\\*","<font color='ff79c6'>\\*</font>");
-     
+                 
+            }
+            codigoHtml = "<html><pre>"+codigoHtml+"</pre></html>";
+            txtCodigo.setText(codigoHtml);
             
-            codigoFinal = "<html><pre>"+codigoFinal+"</pre></html>";
 
             
-            System.out.println(codigoFinal);
-
-            
-            txtCodigo.setText(codigoFinal);
             
     } catch (IOException ex) {
         Logger.getLogger(TelaAnalisadorLexico.class.getName()).log(Level.SEVERE, null, ex);
@@ -263,20 +236,19 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
     }//GEN-LAST:event_btnArquivoActionPerformed
 
     private void btnValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidarActionPerformed
-        StringBuilder tokens = new StringBuilder();
+
         Verify compilador = new Verify();
         KeyWords[] keywords = KeyWords.values();
         String txtPronto = compilador.iniciaCompilador(codigoTokens,keywords);
+        System.out.println(txtPronto);
         for(KeyWords kw: keywords){
             txtPronto = txtPronto.replace(kw.getNome(),"<font color='"+ kw.getHtml()+"'>"+kw.getNome()+"</font>");
         }  
         System.out.println(txtPronto);
-        tokens.append(txtPronto);
-              
-        tokens.insert(0, "<html><pre>");
-        tokens.append("</pre></html>");
-        System.out.println(tokens.toString());
-        txtTokens.setText(tokens.toString());
+        txtPronto = "<html><pre>"+txtPronto+"</pre></html>";
+
+  
+        txtTokens.setText(txtPronto);
     }//GEN-LAST:event_btnValidarActionPerformed
 
     private void btnValidarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnValidarMouseEntered

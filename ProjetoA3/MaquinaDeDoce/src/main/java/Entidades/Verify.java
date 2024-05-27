@@ -3,13 +3,13 @@ package Entidades;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.swing.JOptionPane;
+
 
 
 public class Verify {
     
     public boolean verificaComent(String semEspaco){
-        return semEspaco.indexOf("/*") > 0;
+        return semEspaco.indexOf("&#47&#42") > 0;
     }
     public List<String> variaveis(String apenasVar){
     String[] palavras =  (apenasVar.replaceAll("\\s+", " ").trim()).split(" ");
@@ -24,13 +24,13 @@ public class Verify {
       
     }
     public String iniciaCompilador(String codigo, KeyWords[] keywords){
-        System.out.println(codigo);
+    System.out.println(codigo);
     String tokensFinal = codigo;
     
     // Removendo comentários
     while (verificaComent(tokensFinal)) {
-        int InicComent = tokensFinal.indexOf("/*");
-        int FimComent = tokensFinal.indexOf("*/");
+        int InicComent = tokensFinal.indexOf("&#47&#42");
+        int FimComent = tokensFinal.indexOf("&#42&#47");
         if (InicComent >= 0 && FimComent > InicComent) {
             tokensFinal = tokensFinal.substring(0, InicComent) + tokensFinal.substring(FimComent + 2);
         } else {
@@ -44,12 +44,43 @@ public class Verify {
 
     // Removendo palavras-chave da variável apenasVar
     for (KeyWords kw : keywords) {
-        apenasVar = apenasVar.replaceAll(kw.getLexema(), " ");
+                boolean check1 = apenasVar.contains(kw.getLexema()+"&#40")||apenasVar.contains(kw.getLexema()+"&#91")||
+                        apenasVar.contains(kw.getLexema()+"&#123")|| apenasVar.contains(kw.getLexema()+" ") ;
+                boolean check2 = kw.getNome().contains("|KW_CONDICIONAL_")||kw.getNome().contains("|KW_REPETICAO_")||
+                        kw.getNome().contains("|IDENTIFICADOR_")|| kw.getNome().contains("|KW_DECLARACAO_");
+                boolean check3 = check1 && check2;
+    
+                if(check3){
+                    apenasVar = apenasVar.replaceAll(kw.getLexema()+" "," ");
+                    apenasVar = apenasVar.replaceAll(kw.getLexema()+"&#40"," ");
+                    apenasVar = apenasVar.replaceAll(kw.getLexema()+"&#91"," ");
+                    apenasVar = apenasVar.replaceAll(kw.getLexema()+"&#123"," ");
+                }
+                if(check2==false){
+                   apenasVar = apenasVar.replaceAll(kw.getLexema(), " ");
+                }
+        
     }
-
-    // Substituindo palavras-chave na variável tokensFinal
+        //System.out.println(apenasVar);
+        System.out.println(tokensFinal);
     for (KeyWords kw : keywords) {
-        tokensFinal = tokensFinal.replaceAll(kw.getLexema(), "\n" + kw.getNome());
+                boolean check1 = tokensFinal.contains(kw.getLexema()+"&#40")||tokensFinal.contains(kw.getLexema()+"&#91")||
+                        tokensFinal.contains(kw.getLexema()+"&#123")|| tokensFinal.contains(kw.getLexema()+" ") ;
+                boolean check2 = kw.getNome().contains("|KW_CONDICIONAL_")||kw.getNome().contains("|KW_REPETICAO_")||
+                        kw.getNome().contains("|IDENTIFICADOR_")|| kw.getNome().contains("|KW_DECLARACAO_");
+                boolean check3 = check1 && check2;
+    
+                if(check3){
+                    tokensFinal = tokensFinal.replaceAll(kw.getLexema()+" ", "\n" + kw.getNome()+" ");
+                    tokensFinal = tokensFinal.replaceAll(kw.getLexema()+"&#40", "\n" + kw.getNome()+"&#40");
+                    tokensFinal = tokensFinal.replaceAll(kw.getLexema()+"&#91", "\n" + kw.getNome()+"&#91");
+                    tokensFinal = tokensFinal.replaceAll(kw.getLexema()+"&#123", "\n" + kw.getNome()+"&#123");
+
+                }
+                if(check2==false){
+                   tokensFinal = tokensFinal.replaceAll(kw.getLexema(), "\n" + kw.getNome());
+                }
+        
     }
     List<String> ListaVar = variaveis(apenasVar);
     for(String variavel : ListaVar){
