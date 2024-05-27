@@ -1,0 +1,65 @@
+public static void main(){
+   int gcd(int a,int b){
+      whilea(a != b){
+	   if(a >= b){
+  		   a -= b;
+	   }
+	   else{
+		   b -= a;
+	   }
+        }
+       return a;
+   }
+}
+teste
+quasee
+aaaaaaaa
+testeeeee
+>
+<
+>=
+<=
+=
+==
+!
+int 
+double 
+String 
+;
+,
+(
+)
+[
+]
+{
+}
+
+
++
+-
+if 
+else 
+switch 
+while 
+for 
+Do 
+public 
+static 
+void 
+main 
+package 
+return 
+
+
+ifa
+elsea
+switcha
+whilea
+fora
+Doa
+publica
+statica
+voida
+maina
+packagea
+returna
