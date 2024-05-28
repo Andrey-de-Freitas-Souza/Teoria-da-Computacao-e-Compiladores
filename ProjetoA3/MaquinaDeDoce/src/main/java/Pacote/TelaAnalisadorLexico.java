@@ -180,12 +180,13 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
                 txtFile.setText(path.toString());
                 List<String> linhas = Files.readAllLines(path);
                 for (String linha : linhas) {
-                    codigo.append(linha).append("\n");
+                    codigo.append(" ").append(linha).append("\n");
                 }
                 
             
 
             String codigoHtml = codigo.toString();
+                System.out.println(codigoHtml);
             codigoHtml = codigoHtml.replaceAll("\\<", "&lt");
             codigoHtml = codigoHtml.replaceAll("\\>", "&gt");
             codigoHtml = codigoHtml.replaceAll("\\=", "&#61");
@@ -202,24 +203,27 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
             codigoHtml = codigoHtml.replaceAll("\\/", "&#47");
             codigoHtml = codigoHtml.replaceAll("\\+", "&#43");
             codigoHtml = codigoHtml.replaceAll("\\-", "&#45");
+            codigoHtml = codigoHtml.replaceAll("&&", "&amp&amp");
+            codigoHtml = codigoHtml.replace("||", "&#124&#124");
+            System.out.println(codigoHtml);
             codigoTokens = codigoHtml;
  ;
             for (KeyWords kw : keywords) {
-                boolean check1 = codigoHtml.contains(kw.getLexema()+"&#40")||codigoHtml.contains(kw.getLexema()+"&#91")||
-                        codigoHtml.contains(kw.getLexema()+"&#123")|| codigoHtml.contains(kw.getLexema()+" ") ;
-                boolean check2 = kw.getNome().contains("|KW_CONDICIONAL_")||kw.getNome().contains("|KW_REPETICAO_")||
-                        kw.getNome().contains("|IDENTIFICADOR_")|| kw.getNome().contains("|KW_DECLARACAO_");
+                boolean check1 = codigoHtml.contains(" "+kw.getLexema()+"&#40")||codigoHtml.contains(" "+kw.getLexema()+"&#91")||
+                        codigoHtml.contains(" "+kw.getLexema()+"&#123")|| codigoHtml.contains(" "+kw.getLexema()+" ") ;
+                boolean check2 = kw.isPrecisaEspaco();
                 boolean check3 = check1 && check2;
     
                 if(check3){
-                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+" ","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+" </font>");
-                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+"&#40","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"&#40</font>");
-                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+"&#91","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"&#91</font>");
-                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+"&#123","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"&#123</font>");
+                    codigoHtml = codigoHtml.replaceAll(" "+kw.getLexema()+" ","<font color='"+ kw.getHtml()+"'> "+kw.getLexema()+" </font>");
+                    codigoHtml = codigoHtml.replaceAll(" "+kw.getLexema()+"&#40","<font color='"+ kw.getHtml()+"'> "+kw.getLexema()+"&#40</font>");
+                    codigoHtml = codigoHtml.replaceAll(" "+kw.getLexema()+"&#91","<font color='"+ kw.getHtml()+"'> "+kw.getLexema()+"&#91</font>");
+                    codigoHtml = codigoHtml.replaceAll(" "+kw.getLexema()+"&#123","<font color='"+ kw.getHtml()+"'> "+kw.getLexema()+"&#123</font>");
                 }
                 else{
                     codigoHtml = codigoHtml.replaceAll(kw.getLexema(),"<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"</font>");
                 }
+                System.out.println(kw.getLexema());
                  
             }
             codigoHtml = "<html><pre>"+codigoHtml+"</pre></html>";
