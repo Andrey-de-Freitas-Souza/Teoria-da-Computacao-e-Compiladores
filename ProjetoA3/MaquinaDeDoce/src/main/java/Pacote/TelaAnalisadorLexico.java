@@ -5,6 +5,7 @@
 package Pacote;
 import Entidades.KeyWords;
 import Entidades.Verify;
+
 import java.awt.Color;
 import java.util.List;
 import java.io.File;
@@ -14,7 +15,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Pattern;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 /**
@@ -22,16 +22,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author andre
  */
 public class TelaAnalisadorLexico extends javax.swing.JFrame {
-    String codigoTokens;
-    public static int countOccurrences(String linha, String lexema) {
-    int count = 0;
-    int lastIndex = 0;
-    while ((lastIndex = linha.indexOf(lexema, lastIndex)) != -1) {
-        count++;
-        lastIndex += lexema.length();
-    }
-    return count;
-}
+    String espacado = "";
+    List<String> palavrasChaves = new ArrayList<>();
     public TelaAnalisadorLexico() {
         super("Analisador Léxico");  
         initComponents();
@@ -164,7 +156,7 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnArquivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnArquivoActionPerformed
-       JFileChooser expArquivos = new JFileChooser();
+        JFileChooser expArquivos = new JFileChooser();
         expArquivos.setDialogTitle("Explorador");
         expArquivos.setFileSelectionMode(JFileChooser.FILES_ONLY);
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Texto", "txt");
@@ -183,10 +175,8 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
                     codigo.append(" ").append(linha).append("\n");
                 }
                 
-            
-
             String codigoHtml = codigo.toString();
-                System.out.println(codigoHtml);
+            System.out.println(codigoHtml);
             codigoHtml = codigoHtml.replaceAll("\\<", "&lt");
             codigoHtml = codigoHtml.replaceAll("\\>", "&gt");
             codigoHtml = codigoHtml.replaceAll("\\=", "&#61");
@@ -205,33 +195,35 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
             codigoHtml = codigoHtml.replaceAll("\\-", "&#45");
             codigoHtml = codigoHtml.replaceAll("&&", "&amp&amp");
             codigoHtml = codigoHtml.replace("||", "&#124&#124");
-            System.out.println(codigoHtml);
-            codigoTokens = codigoHtml;
- ;
+            espacado = codigoHtml;
+            
             for (KeyWords kw : keywords) {
-                boolean check1 = codigoHtml.contains(" "+kw.getLexema()+"&#40")||codigoHtml.contains(" "+kw.getLexema()+"&#91")||
-                        codigoHtml.contains(" "+kw.getLexema()+"&#123")|| codigoHtml.contains(" "+kw.getLexema()+" ") ;
+                palavrasChaves.add(kw.getLexema());
+                boolean check1 = codigoHtml.contains(kw.getLexema()+"&#40")||codigoHtml.contains(kw.getLexema()+"&#91")||
+                        codigoHtml.contains(kw.getLexema()+"&#123")|| codigoHtml.contains(kw.getLexema()+" ") || 
+                        kw.isPrecisaEspaco() == false;
                 boolean check2 = kw.isPrecisaEspaco();
                 boolean check3 = check1 && check2;
     
                 if(check3){
-                    codigoHtml = codigoHtml.replaceAll(" "+kw.getLexema()+" ","<font color='"+ kw.getHtml()+"'> "+kw.getLexema()+" </font>");
-                    codigoHtml = codigoHtml.replaceAll(" "+kw.getLexema()+"&#40","<font color='"+ kw.getHtml()+"'> "+kw.getLexema()+"&#40</font>");
-                    codigoHtml = codigoHtml.replaceAll(" "+kw.getLexema()+"&#91","<font color='"+ kw.getHtml()+"'> "+kw.getLexema()+"&#91</font>");
-                    codigoHtml = codigoHtml.replaceAll(" "+kw.getLexema()+"&#123","<font color='"+ kw.getHtml()+"'> "+kw.getLexema()+"&#123</font>");
+                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+" ","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"</font> ");
+                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+"&#40","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"&#40</font>");
+                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+"&#91","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"&#91</font>");
+                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+"&#123","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"&#123</font>");
+                    espacado = espacado.replaceAll(" "+kw.getLexema()+" "," " + kw.getLexema()+" ");
+                    espacado = espacado.replaceAll(" "+kw.getLexema()+"&#40"," " + kw.getLexema()+" &#40");
+                    espacado = espacado.replaceAll(" "+kw.getLexema()+"&#91"," " + kw.getLexema()+" &#91");
+                    espacado = espacado.replaceAll(" "+kw.getLexema()+"&#123"," " + kw.getLexema()+" &#123");
+         
                 }
                 else{
                     codigoHtml = codigoHtml.replaceAll(kw.getLexema(),"<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"</font>");
+                    espacado = espacado.replaceAll(kw.getLexema(),kw.getEspacado());
                 }
-                System.out.println(kw.getLexema());
-                 
+           
             }
-            codigoHtml = "<html><pre>"+codigoHtml+"</pre></html>";
-            txtCodigo.setText(codigoHtml);
-            
-
-            
-            
+            codigoHtml = "<html><pre>"+codigoHtml+"<html></pre>";
+            txtCodigo.setText(codigoHtml);            
     } catch (IOException ex) {
         Logger.getLogger(TelaAnalisadorLexico.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -240,19 +232,33 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
     }//GEN-LAST:event_btnArquivoActionPerformed
 
     private void btnValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidarActionPerformed
-
-        Verify compilador = new Verify();
         KeyWords[] keywords = KeyWords.values();
-        String txtPronto = compilador.iniciaCompilador(codigoTokens,keywords);
-        System.out.println(txtPronto);
-        for(KeyWords kw: keywords){
-            txtPronto = txtPronto.replace(kw.getNome(),"<font color='"+ kw.getHtml()+"'>"+kw.getNome()+"</font>");
-        }  
-        System.out.println(txtPronto);
-        txtPronto = "<html><pre>"+txtPronto+"</pre></html>";
-
-  
-        txtTokens.setText(txtPronto);
+        StringBuilder tokensAux = new StringBuilder(); 
+           Verify compilador = new Verify();
+           String[] palavras =  (espacado.replaceAll("\\s+", " ").trim()).split(" ");            
+            for(String palavra: palavras){               
+                for(KeyWords kw : keywords){                                 
+                    if(palavra.equals(kw.getLexema())){
+                        tokensAux.append("<font color='");
+                        tokensAux.append(kw.getHtml());
+                        tokensAux.append("'>");                      
+                        tokensAux.append(kw.getNome());
+                        tokensAux.append("</font>"); 
+                        tokensAux.append("\n");
+                    }
+                    
+                    else if(!Character.isDigit(palavra.charAt(0)) && !compilador.verificaCaracter(palavra)&& 
+                        !palavrasChaves.contains(palavra)){
+                        tokensAux.append("|VARIAVEL| ");
+                        tokensAux.append(palavra);
+                        tokensAux.append("\n");
+                        break;
+                    }
+                }                      
+            }
+        String tokens = tokensAux.toString();
+        tokens = "<html><pre>"+tokens+"</pre></html>";
+        txtTokens.setText(tokens);
     }//GEN-LAST:event_btnValidarActionPerformed
 
     private void btnValidarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnValidarMouseEntered

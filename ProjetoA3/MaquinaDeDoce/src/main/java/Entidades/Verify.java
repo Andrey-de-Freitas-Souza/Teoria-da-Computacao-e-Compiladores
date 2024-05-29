@@ -3,6 +3,8 @@ package Entidades;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 
@@ -23,11 +25,16 @@ public class Verify {
     return ListaVar;
       
     }
+
+    public  boolean verificaCaracter(String str) {
+        String regex = "[^a-zA-Z0-9]";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(str);
+        return matcher.find();
+    }
     public String iniciaCompilador(String codigo, KeyWords[] keywords){
     System.out.println(codigo);
     String tokensFinal = codigo;
-    
-    // Removendo comentários
     while (verificaComent(tokensFinal)) {
         int InicComent = tokensFinal.indexOf("&#47&#42");
         int FimComent = tokensFinal.indexOf("&#42&#47");
@@ -38,59 +45,6 @@ public class Verify {
              // Para evitar loop infinito se a sintaxe do comentário estiver incorreta
         }
     }
-
-    // Copiando tokensFinal para apenasVar antes de qualquer modificação
-    String apenasVar = tokensFinal;
-
-    // Removendo palavras-chave da variável apenasVar
-    for (KeyWords kw : keywords) {
-                boolean check1 = apenasVar.contains(" "+kw.getLexema()+"&#40")||apenasVar.contains(" "+kw.getLexema()+"&#91")||
-                        apenasVar.contains(" "+kw.getLexema()+"&#123")|| apenasVar.contains(" "+kw.getLexema()+" ") ;
-                boolean check2 = kw.isPrecisaEspaco();
-                boolean check3 = check1 && check2;
-    
-                if(check3){
-                    apenasVar = apenasVar.replaceAll(" "+kw.getLexema()+" "," ");
-                    apenasVar = apenasVar.replaceAll(" "+kw.getLexema()+"&#40"," ");
-                    apenasVar = apenasVar.replaceAll(" "+kw.getLexema()+"&#91"," ");
-                    apenasVar = apenasVar.replaceAll(" "+kw.getLexema()+"&#123"," ");
-                }
-                if(check2==false){
-                   apenasVar = apenasVar.replaceAll(kw.getLexema(), " ");
-                }
-        
-    }
-        //System.out.println(apenasVar);
-        System.out.println(tokensFinal);
-    for (KeyWords kw : keywords) {
-                boolean check1 = tokensFinal.contains(" "+kw.getLexema()+"&#40")||tokensFinal.contains(" "+kw.getLexema()+"&#91")||
-                        tokensFinal.contains(" "+kw.getLexema()+"&#123")|| tokensFinal.contains(" "+kw.getLexema()+" ") ;
-                boolean check2 = kw.isPrecisaEspaco();
-                boolean check3 = check1 && check2;
-    
-                if(check3){
-                    tokensFinal = tokensFinal.replaceAll(" "+kw.getLexema()+" ", "\n" + kw.getNome()+" ");
-                    tokensFinal = tokensFinal.replaceAll(" "+kw.getLexema()+"&#40", "\n" + kw.getNome()+"&#40");
-                    tokensFinal = tokensFinal.replaceAll(" "+kw.getLexema()+"&#91", "\n" + kw.getNome()+"&#91");
-                    tokensFinal = tokensFinal.replaceAll(" "+kw.getLexema()+"&#123", "\n" + kw.getNome()+"&#123");
-
-                }
-                if(check2==false){
-                   tokensFinal = tokensFinal.replaceAll(kw.getLexema(), "\n" + kw.getNome());
-                }
-        
-    }
-    List<String> ListaVar = variaveis(apenasVar);
-    for(String variavel : ListaVar){
-        if(!Character.isDigit(variavel.charAt(0))){
-            tokensFinal = tokensFinal.replaceAll(variavel, "\n|VARIAVEL| ");
-        }
-        else{
-            //JOptionPane.showMessageDialog(null, "Variável "+variavel+" começa com número");
-            return "<font color='red'>ERROR: variável " + variavel + " começa com numérico.</font>" ;
-        }
-    }  
-    tokensFinal = (tokensFinal.replaceAll("\\s+", "")).replace("||", "|\n|");
     return tokensFinal;
     }
     
