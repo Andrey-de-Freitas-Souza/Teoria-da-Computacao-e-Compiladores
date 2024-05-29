@@ -32,7 +32,22 @@ public class Verify {
         Matcher matcher = pattern.matcher(str);
         return matcher.find();
     }
-    public String iniciaCompilador(String codigo, KeyWords[] keywords){
+    public String RemoveComentarios(String codigo, KeyWords[] keywords){
+    System.out.println(codigo);
+    String tokensFinal = codigo;
+    while (verificaComent(tokensFinal)) {
+        int InicComent = tokensFinal.indexOf("&#47&#42");
+        int FimComent = tokensFinal.indexOf("&#42&#47");
+        if (InicComent >= 0 && FimComent > InicComent) {
+            tokensFinal = tokensFinal.substring(0, InicComent) + tokensFinal.substring(FimComent + 2);
+        } else {
+            return "<font color='red'>ERROR: comentário não finalizado";    
+             // Para evitar loop infinito se a sintaxe do comentário estiver incorreta
+        }
+    }
+    return tokensFinal;
+    }
+    public String ColoreComentario(String codigo, KeyWords[] keywords){
     System.out.println(codigo);
     String tokensFinal = codigo;
     while (verificaComent(tokensFinal)) {
