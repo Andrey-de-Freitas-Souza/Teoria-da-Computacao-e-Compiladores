@@ -172,7 +172,7 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
                 txtFile.setText(path.toString());
                 List<String> linhas = Files.readAllLines(path);
                 for (String linha : linhas) {
-                    codigo.append(" ").append(linha).append("\n");
+                    codigo.append(" ").append(linha).append(" \n");
                 }
                 
             String codigoHtml = codigo.toString();
@@ -195,34 +195,67 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
             codigoHtml = codigoHtml.replaceAll("\\-", "&#45");
             codigoHtml = codigoHtml.replaceAll("&&", "&amp&amp");
             codigoHtml = codigoHtml.replace("||", "&#124&#124");
+            //Verify compilador = new Verify();
+            //espacado = compilador.RemoveComentarios(codigoHtml, keywords);
             espacado = codigoHtml;
             
             for (KeyWords kw : keywords) {
                 palavrasChaves.add(kw.getLexema());
-                boolean check1 = codigoHtml.contains(kw.getLexema()+"&#40")||codigoHtml.contains(kw.getLexema()+"&#91")||
-                        codigoHtml.contains(kw.getLexema()+"&#123")|| codigoHtml.contains(kw.getLexema()+" ") || 
-                        kw.isPrecisaEspaco() == false;
+                boolean check1 = codigoHtml.contains(" "+kw.getLexema()+"&#40")||codigoHtml.contains(" "+kw.getLexema()+"&#91")||
+                        codigoHtml.contains(" "+kw.getLexema()+"&#123")|| codigoHtml.contains(" "+kw.getLexema()+" ") || 
+                        kw.isPrecisaEspaco() == false; //|| codigoHtml.contains(" "+kw.getLexema()+"<");;
                 boolean check2 = kw.isPrecisaEspaco();
                 boolean check3 = check1 && check2;
-    
+                if(codigoHtml.contains(" "+kw.getLexema()+" ")){
+                    codigoHtml = codigoHtml.replaceAll(" "+kw.getLexema()+" "," <font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"</font> ");
+                }
                 if(check3){
-                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+" ","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"</font> ");
-                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+"&#40","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"&#40</font>");
-                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+"&#91","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"&#91</font>");
-                    codigoHtml = codigoHtml.replaceAll(kw.getLexema()+"&#123","<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"&#123</font>");
+                    List<String> caracteres = new ArrayList();
+                    caracteres.add(" ");
+                    caracteres.add("&#59");
+                    caracteres.add("&#44");
+                    caracteres.add("&#40");
+                    caracteres.add("&#41");
+                    caracteres.add("&#91");
+                    caracteres.add("&#93");
+                    caracteres.add("&#123");
+                    caracteres.add("&#125");
+                    for(String simbolos: caracteres){
+                        for(String simbolo: caracteres){
+                            codigoHtml = codigoHtml.replaceAll(simbolos+kw.getLexema()+simbolo,"<font color='"+ kw.getHtml()+"'>"+simbolos+kw.getLexema()+"</font>"+simbolo);
+    
+                        }
+                    }                    
                     espacado = espacado.replaceAll(" "+kw.getLexema()+" "," " + kw.getLexema()+" ");
                     espacado = espacado.replaceAll(" "+kw.getLexema()+"&#40"," " + kw.getLexema()+" &#40");
                     espacado = espacado.replaceAll(" "+kw.getLexema()+"&#91"," " + kw.getLexema()+" &#91");
                     espacado = espacado.replaceAll(" "+kw.getLexema()+"&#123"," " + kw.getLexema()+" &#123");
          
                 }
+                
                 else{
                     codigoHtml = codigoHtml.replaceAll(kw.getLexema(),"<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"</font>");
                     espacado = espacado.replaceAll(kw.getLexema(),kw.getEspacado());
                 }
            
             }
+            while (codigoHtml.contains("<font color='ff79c6'>&#47</font><font color='ff79c6'>&#42</font>")) {
+                int InicComent = codigoHtml.indexOf("<font color='ff79c6'>&#47</font><font color='ff79c6'>&#42</font>");
+                int FimComent = codigoHtml.indexOf("<font color='ff79c6'>&#42</font><font color='ff79c6'>&#47</font>");
+                String part1 = codigoHtml.substring(0, InicComent);
+                String part2 = codigoHtml.substring(InicComent, FimComent+64);
+                String part3 = codigoHtml.substring(FimComent+64);
+                
+                for(KeyWords kw: keywords){
+                part2 = part2.replace("<font color='"+kw.getHtml()+"'>","");                        
+                }
+                part2 = part2.replace("</font>","");
+                codigoHtml = part1+"<font color='#808080'>"+part2+"</font>"+part3;
+            }
+      
+
             codigoHtml = "<html><pre>"+codigoHtml+"<html></pre>";
+                System.out.println(codigoHtml);
             txtCodigo.setText(codigoHtml);            
     } catch (IOException ex) {
         Logger.getLogger(TelaAnalisadorLexico.class.getName()).log(Level.SEVERE, null, ex);
@@ -233,31 +266,10 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
 
     private void btnValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnValidarActionPerformed
         KeyWords[] keywords = KeyWords.values();
-        StringBuilder tokensAux = new StringBuilder(); 
-           Verify compilador = new Verify();
-           String[] palavras =  (espacado.replaceAll("\\s+", " ").trim()).split(" ");            
-            for(String palavra: palavras){               
-                for(KeyWords kw : keywords){                                 
-                    if(palavra.equals(kw.getLexema())){
-                        tokensAux.append("<font color='");
-                        tokensAux.append(kw.getHtml());
-                        tokensAux.append("'>");                      
-                        tokensAux.append(kw.getNome());
-                        tokensAux.append("</font>"); 
-                        tokensAux.append("\n");
-                    }
-                    
-                    else if(!Character.isDigit(palavra.charAt(0)) && !compilador.verificaCaracter(palavra)&& 
-                        !palavrasChaves.contains(palavra)){
-                        tokensAux.append("|VARIAVEL| ");
-                        tokensAux.append(palavra);
-                        tokensAux.append("\n");
-                        break;
-                    }
-                }                      
-            }
-        String tokens = tokensAux.toString();
-        tokens = "<html><pre>"+tokens+"</pre></html>";
+         
+        Verify compilador = new Verify();
+        String tokens = compilador.compilar(espacado, keywords,palavrasChaves);
+           
         txtTokens.setText(tokens);
     }//GEN-LAST:event_btnValidarActionPerformed
 
