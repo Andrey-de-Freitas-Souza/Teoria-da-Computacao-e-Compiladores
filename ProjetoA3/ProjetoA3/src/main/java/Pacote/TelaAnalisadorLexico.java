@@ -176,7 +176,7 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
                 }
                 
             String codigoHtml = codigo.toString();
-            System.out.println(codigoHtml);
+
             codigoHtml = codigoHtml.replaceAll("\\<", "&lt");
             codigoHtml = codigoHtml.replaceAll("\\>", "&gt");
             codigoHtml = codigoHtml.replaceAll("\\=", "&#61");
@@ -195,12 +195,14 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
             codigoHtml = codigoHtml.replaceAll("\\-", "&#45");
             codigoHtml = codigoHtml.replaceAll("&&", "&amp&amp");
             codigoHtml = codigoHtml.replace("||", "&#124&#124");
+            codigoHtml = codigoHtml.replaceAll('"'+"", "&_AsD");
+            codigoHtml = codigoHtml.replaceAll("'", "&_AsS");
             //Verify compilador = new Verify();
             //espacado = compilador.RemoveComentarios(codigoHtml, keywords);
             espacado = codigoHtml;
-            
+
             for (KeyWords kw : keywords) {
-                palavrasChaves.add(kw.getLexema());
+                palavrasChaves.add(kw.getLexema().replaceAll("\\s", ""));
                 boolean check1 = codigoHtml.contains(" "+kw.getLexema()+"&#40")||codigoHtml.contains(" "+kw.getLexema()+"&#91")||
                         codigoHtml.contains(" "+kw.getLexema()+"&#123")|| codigoHtml.contains(" "+kw.getLexema()+" ") || 
                         kw.isPrecisaEspaco() == false; //|| codigoHtml.contains(" "+kw.getLexema()+"<");;
@@ -242,20 +244,113 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
             while (codigoHtml.contains("<font color='ff79c6'>&#47</font><font color='ff79c6'>&#42</font>")) {
                 int InicComent = codigoHtml.indexOf("<font color='ff79c6'>&#47</font><font color='ff79c6'>&#42</font>");
                 int FimComent = codigoHtml.indexOf("<font color='ff79c6'>&#42</font><font color='ff79c6'>&#47</font>");
-                String part1 = codigoHtml.substring(0, InicComent);
-                String part2 = codigoHtml.substring(InicComent, FimComent+64);
-                String part3 = codigoHtml.substring(FimComent+64);
+                          
+                    String part1 = codigoHtml.substring(0, InicComent);
+                    String part2 = codigoHtml.substring(InicComent, FimComent+64);
+                    String part3 = codigoHtml.substring(FimComent+64);
+
+                    for(KeyWords kw: keywords){
+                    part2 = part2.replace("<font color='"+kw.getHtml()+"'>","");                        
+                    }
+                    part2 = part2.replace("</font>","");
+                    codigoHtml = part1+"<font color='#808080'>"+part2+"</font>"+part3;
                 
-                for(KeyWords kw: keywords){
-                part2 = part2.replace("<font color='"+kw.getHtml()+"'>","");                        
+
+            }
+            while (codigoHtml.contains("&_AsD")) {
+                int InicComent = codigoHtml.indexOf("&_AsD");
+                int FimComent = codigoHtml.indexOf("&_AsD",InicComent+5);
+                if(FimComent>InicComent){  
+ 
+                    String part1 = codigoHtml.substring(0, InicComent+5);
+                    String part2 = codigoHtml.substring(InicComent+5, FimComent+5);
+                    String part3 = codigoHtml.substring(FimComent+5);                
+
+                    for(KeyWords kw: keywords){
+                    part2 = part2.replace("<font color='"+kw.getHtml()+"'>","");                        
+                    }
+                    part2 = part2.replace("</font>","");
+
+                    if(part1.contains("&_AsD ")){
+                        part1 = part1.replaceAll("&_AsD ", "<font color='#3fca3c'>&quot ");
+                    }
+                    else{
+                        part1 = part1.replaceAll("&_AsD", "<font color='#3fca3c'>&quot;");
+                    }
+                    part2 = part2.replace("&_AsD","&quot</font>");
+
+
+                    codigoHtml = part1+part2+part3;
+
                 }
-                part2 = part2.replace("</font>","");
-                codigoHtml = part1+"<font color='#808080'>"+part2+"</font>"+part3;
+                else{
+                    String part1 = codigoHtml.substring(0, InicComent+5);
+                    String part2 = codigoHtml.substring(InicComent+5);               
+
+                    for(KeyWords kw: keywords){
+                    part2 = part2.replace("<font color='"+kw.getHtml()+"'>","");                        
+                    }
+                    part2 = part2.replace("</font>","");
+
+                    if(part1.contains("&_AsD ")){
+                        part1 = part1.replaceAll("&_AsD ", "<font color='#3fca3c'>&quot ");
+                    }
+                    else{
+                        part1 = part1.replaceAll("&_AsD", "<font color='#3fca3c'>&quot;");
+                    }
+                    codigoHtml = part1+part2+"</font>";
+                }
+                
+            }
+            while (codigoHtml.contains("&_AsS")) {
+                int InicComent = codigoHtml.indexOf("&_AsS");
+                int FimComent = codigoHtml.indexOf("&_AsS",InicComent+5);
+                if(FimComent>InicComent){  
+
+                    String part1 = codigoHtml.substring(0, InicComent+5);
+                    String part2 = codigoHtml.substring(InicComent+5, FimComent+5);
+                    String part3 = codigoHtml.substring(FimComent+5);                
+
+                    for(KeyWords kw: keywords){
+                    part2 = part2.replace("<font color='"+kw.getHtml()+"'>","");                        
+                    }
+                    part2 = part2.replace("</font>","");
+
+                    if(part1.contains("&_AsS ")){
+                        part1 = part1.replaceAll("&_AsS ", "<font color='#3fca3c'>' ");
+                    }
+                    else{
+                        part1 = part1.replaceAll("&_AsS", "<font color='#3fca3c'>'");
+                    }
+                    part2 = part2.replace("&_AsS","'</font>");
+
+
+                    codigoHtml = part1+part2+part3;
+                    break;
+                }
+                else{
+                    String part1 = codigoHtml.substring(0, InicComent+5);
+                    String part2 = codigoHtml.substring(InicComent+5);               
+
+                    for(KeyWords kw: keywords){
+                    part2 = part2.replace("<font color='"+kw.getHtml()+"'>","");                        
+                    }
+                    part2 = part2.replace("</font>","");
+
+                    if(part1.contains("&_AsS ")){
+                        part1 = part1.replaceAll("&_AsS ", "<font color='#3fca3c'>' ");
+                    }
+                    else{
+                        part1 = part1.replaceAll("&_AsS", "<font color='#3fca3c'>'");
+                    }
+                    codigoHtml = part1+part2+"</font>";
+                }
+                
             }
       
 
             codigoHtml = "<html><pre>"+codigoHtml+"<html></pre>";
-                System.out.println(codigoHtml);
+
             txtCodigo.setText(codigoHtml);            
     } catch (IOException ex) {
         Logger.getLogger(TelaAnalisadorLexico.class.getName()).log(Level.SEVERE, null, ex);

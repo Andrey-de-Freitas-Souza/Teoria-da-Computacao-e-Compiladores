@@ -55,10 +55,12 @@ public class Verify {
         }
     }
     StringBuilder tokensAux = new StringBuilder();
-    System.out.println(tokensFinal);
+
            String[] palavras =  (tokensFinal.replaceAll("\\s+", " ").trim()).split(" ");            
-            for(String palavra: palavras){               
-                for(KeyWords kw : keywords){                                 
+            for(String palavra: palavras){   
+                
+                for(KeyWords kw : keywords){ 
+                    System.out.println(palavra+"     "+kw.getLexema());
                     if(palavra.equals(kw.getLexema())){
                         tokensAux.append("<font color='");
                         tokensAux.append(kw.getHtml());
@@ -78,9 +80,8 @@ public class Verify {
                         tokensAux.append("\n");
                         break;
                     }
-                    else if(Character.isDigit(palavra.charAt(0)) && verificaNumeroLetra(palavra)&& 
-                        !palavrasChaves.contains(palavra)){
-                        return "<html><pre><font color='red'>ERROR: Variável "+ palavra + " começa com numérico.</font></pre></html>";
+                    else if(verificaCaracter(palavra)&& !palavrasChaves.contains(palavra)){
+                        return "<html><pre><font color='red'>ERROR: Variável "+ palavra + " contém caractere especial.</font></pre></html>";
 
                     }
                     else if(verificaNumerico(palavra)&& 
@@ -93,24 +94,10 @@ public class Verify {
                     }
                 }                      
             }
-    return "<html><pre>"+ tokensAux+"</pre></html>";
+    String tokensProntos = tokensAux.toString().replaceAll("&_AsD",'"'+"" ).replaceAll("&_AsS", "'");
+    return "<html><pre>"+ tokensProntos+"</pre></html>";
     }
-    public String ColoreComentario(String codigo, KeyWords[] keywords){
-    System.out.println(codigo);
-    String tokensFinal = codigo;
-    while (verificaComent(tokensFinal)) {
-        int InicComent = tokensFinal.indexOf("&#47&#42");
-        int FimComent = tokensFinal.indexOf("&#42&#47");
-        if (InicComent >= 0 && FimComent > InicComent) {
-            tokensFinal = tokensFinal.substring(0, InicComent) + tokensFinal.substring(FimComent + 2);
-        } else {
-            return "<font color='red'>ERROR: comentário não finalizado";    
-             // Para evitar loop infinito se a sintaxe do comentário estiver incorreta
-        }
-    }
-    return tokensFinal;
-    }
-    
+
     
     
 }

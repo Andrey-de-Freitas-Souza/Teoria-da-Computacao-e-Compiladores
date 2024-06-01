@@ -59,7 +59,9 @@ public enum KeyWords {
     MULTIPLICACAO("&#42","|  OPERADOR_MAT |","ff79c6"," &#42 ",false),
     DIVISAO("&#47","|  OPERADOR_MAT |","ff79c6"," &#47 ",false),
     ADICAO("&#43","|  OPERADOR_MAT |","ff79c6"," &#43 ",false),
-    SUBTRACAO("&#45","|  OPERADOR_MAT |","ff79c6"," &#45 ",false)
+    SUBTRACAO("&#45","|  OPERADOR_MAT |","ff79c6"," &#45 ",false),
+    ASPASD("&_AsD","|   DELIMITADOR |","#3fca3c"," &_AsD ",false),
+    ASPASS("&_AsS","|   DELIMITADOR |","#3fca3c"," &_AsS ",false)
     
     ;
     
