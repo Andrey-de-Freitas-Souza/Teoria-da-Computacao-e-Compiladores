@@ -6,7 +6,7 @@ Este repositório é dedicado à entrega de projetos e atividades relacionadas �
 <h2> CASE 1 - Modelagem de uma Máquina de Doces utilizando um Autômato Finito Determinístico
 </h2>
 <p align="center">
-<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens/TelaMaquina.png?raw=true">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/Imagens/TelaMaquina.png?raw=true">
 </p>
 
 **Resumo:** <br>
@@ -24,12 +24,12 @@ A máquina modelada neste trabalho possui uma limitação de saldo de R$ 10,00. 
 <p align="center"> ∑ = {1,00, 2,00, 5,00, -6,00, -7,00, -8,00} </p>
 
 <p align="center">
-<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens/Transicoes.png?raw=true"><br>
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/Imagens/Transicoes.png?raw=true"><br>
 </p>
 
 2 -	Conjunto de estados possíveis do sistema - Q: os elementos deste conjunto correspondem aos diferentes estados que a máquina pode assumir a medida em que o usuário realiza ações.
 <p align="center">
-<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens/Estados.png?raw=true"><br>
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/Imagens/Estados.png?raw=true"><br>
 </p>
 
 3 -	Função programa - δ: esta função leva um par formado por um estado e uma ação (uma entrada) do usuário para um novo estado. As transições realizadas por esta função podem ser visualizadas na imagem 1.
@@ -44,7 +44,7 @@ subconjunto de Q. No sistema aqui descrito, os elementos deste conjunto são d1,
   F = {d1, d2, d3}
 </p>
 <p align="center">
-<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens/AutomatoRead.png?raw=true"><br>
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/Imagens/AutomatoRead.png?raw=true"><br>
 </p>
 <h3 align = "center">
 Imagem 1 - Diagrama de Transições do sistema modelado.
@@ -53,7 +53,7 @@ Imagem 1 - Diagrama de Transições do sistema modelado.
  <h2> CASE 2 - Modelagem de um Sistema de elevador utilizando um Autômato Finito Determinístico
 </h2>
 <p align="center">
-<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens2/TelaElevador.png?raw=true">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/Imagens2/TelaElevador.png?raw=true">
 </p>
 
 **Resumo:** <br>
@@ -71,7 +71,7 @@ A máquina modelada neste trabalho possui uma limitação que só permite o elev
 <p align="center"> ∑ = {a, c, e, o, n, u, p, d ,w} </p>
 
 <p align="center">
-<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens2/Transicoes.png?raw=true"><br>
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/Imagens2/Transicoes.png?raw=true"><br>
 </p>
 
 2 -	Conjunto de estados possíveis do sistema - Q: os elementos deste conjunto correspondem aos diferentes estados que a máquina pode assumir a medida em que o elevador realiza ações.
@@ -79,7 +79,7 @@ A máquina modelada neste trabalho possui uma limitação que só permite o elev
   2A, 2A1, 2A2, 2A3, UP3, DW3, 3A, 3A1 ,3A2, 3A3} </p>
   
 <p align="center">
-<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens2/Estados.png?raw=true"><br>
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/Imagens2/Estados.png?raw=true"><br>
 </p>
 
 3 -	Função programa - δ: esta função leva um par formado por um estado e uma ação do elevador para um novo estado. As transições realizadas por esta função podem ser visualizadas na imagem 1.
@@ -92,7 +92,7 @@ situação em que o elevador se encontra no térreo de portas abertas.
   F = {d1, d2, d3}
 </p>
 <p align="center">
-<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/Imagens2/Automato.png?raw=true"><br>
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/Imagens2/Automato.png?raw=true"><br>
 </p>
 <h3 align = "center">
 Imagem 1 - Diagrama de Transições do sistema modelado.
@@ -101,7 +101,7 @@ Imagem 1 - Diagrama de Transições do sistema modelado.
 <h2> CASE 3 - Criação de um Analisador Léxico
 </h2>
 <p align="center">
-<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/MaquinaDeDoce/src/main/resources/imagens3/imgAnalisadorGit.png?raw=true">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/imagens3/imgAnalisadorGit.png?raw=true">
 </p>
 <h3>Grupo:</h3>
 - Rafael Rossetto Guitarrari (RA: 823158602) <br>
