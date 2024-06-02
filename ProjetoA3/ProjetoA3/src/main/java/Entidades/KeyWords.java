@@ -37,7 +37,7 @@ public enum KeyWords {
     VOID("void","|   KW_MOD_CVM  |","#8be9fd","void ",true),
     RETURN("return","|   KW_RETORNO  |","#F75200","return ",true),
     MAIN("main","|METODO_ESP_MAIN|","#3fca3c","main ",true),        
-    RECEBE("&#61","|   ATRIBUICAO  |","#ff79c6"," &#61 ",false),
+    RECEBE("&#61","|  OPERADOR_REL |","#ff79c6"," &#61 ",false),
     MAIOR("&gt","|  OPERADOR_REL |","#ff79c6"," &gt ",false),
     MENOR("&lt","|  OPERADOR_REL |","#ff79c6"," &lt ",false),
     MAIOR_IGUAL("&gt  &#61","|  OPERADOR_REL |","#ff79c6"," &gt&#61 ",false),
