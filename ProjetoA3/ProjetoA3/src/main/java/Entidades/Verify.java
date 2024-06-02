@@ -33,6 +33,29 @@ public class Verify {
     List<String> palavras = new ArrayList<>(Arrays.asList(arrayDePalavras));
     StringBuilder tokensAux = new StringBuilder();
     int aspas = 0;
+    int incComent = 0;
+    int FimComent = 0;
+    int contadorIComent = 1;
+     for(int i = 0; i <= palavras.size()-1;i++){
+         
+        if(i==palavras.size()-1){
+            contadorIComent=0;
+        }   
+        System.out.println(palavras.get(i)+palavras.get(i+contadorIComent));
+        if((palavras.get(i)+palavras.get(i+contadorIComent)).equals("&#47&#42")){
+            incComent++;
+        }
+        if((palavras.get(i)+palavras.get(i+contadorIComent)).equals("&#42&#47")){
+            FimComent++;
+        }
+        
+     }
+     if(incComent!= FimComent){
+            System.out.println(incComent);
+            System.out.println(FimComent);
+            return "<html><pre><font color='red'>ERROR: Comentário não finalizado.</font></pre></html>";
+        }
+     
     for(String p: palavras){
         if(p.equals("&_AsD")){
             aspas++;
@@ -96,7 +119,7 @@ public class Verify {
                palavras.remove(i);
                textoStr += palavras.get(i)+" ";              
            }
-           System.out.println(textoStr);
+
            textoStr = textoStr.replaceAll("&_AsD", "");
            textoStr="<font color='green'>|     STRING    |   &rarr   "+ textoStr+"</font>\n";
            tokensAux.append("<font color='#3fca3c'>|   DELIMITADOR |   &rarr   \"</font>\n");

@@ -240,20 +240,7 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
                 }
            
             }
-            while (codigoHtml.contains("<font color='ff79c6'>&#47</font><font color='ff79c6'>&#42</font>")) {
-                int InicComent = codigoHtml.indexOf("<font color='ff79c6'>&#47</font><font color='ff79c6'>&#42</font>");
-                int FimComent = codigoHtml.indexOf("<font color='ff79c6'>&#42</font><font color='ff79c6'>&#47</font>");
-                          
-                    String part1 = codigoHtml.substring(0, InicComent);
-                    String part2 = codigoHtml.substring(InicComent, FimComent+64);
-                    String part3 = codigoHtml.substring(FimComent+64);
-
-                    for(KeyWords kw: keywords){
-                    part2 = part2.replace("<font color='"+kw.getHtml()+"'>","");                        
-                    }
-                    part2 = part2.replace("</font>","");
-                    codigoHtml = part1+"<font color='#808080'>"+part2+"</font>"+part3;                
-            }
+           
             while (codigoHtml.contains("&_AsD")) {
                 int InicComent = codigoHtml.indexOf("&_AsD");
                 int FimComent = codigoHtml.indexOf("&_AsD",InicComent+5);
@@ -295,6 +282,20 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
                     }
                     codigoHtml = part1+part2+"</font>";
                 }                
+            }
+             while (codigoHtml.contains("<font color='ff79c6'>&#47</font><font color='ff79c6'>&#42</font>")) {
+                int InicComent = codigoHtml.indexOf("<font color='ff79c6'>&#47</font><font color='ff79c6'>&#42</font>");
+                int FimComent = codigoHtml.indexOf("<font color='ff79c6'>&#42</font><font color='ff79c6'>&#47</font>");
+                          
+                    String part1 = codigoHtml.substring(0, InicComent);
+                    String part2 = codigoHtml.substring(InicComent, FimComent+64);
+                    String part3 = codigoHtml.substring(FimComent+64);
+
+                    for(KeyWords kw: keywords){
+                    part2 = part2.replace("<font color='"+kw.getHtml()+"'>","");                        
+                    }
+                    part2 = part2.replace("</font>","");
+                    codigoHtml = part1+"<font color='#808080'>"+part2+"</font>"+part3;                
             }
             codigoHtml = "<html><pre>"+codigoHtml+"<html></pre>";
             txtCodigo.setText(codigoHtml);            
