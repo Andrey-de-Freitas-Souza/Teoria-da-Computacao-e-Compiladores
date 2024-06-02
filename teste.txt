@@ -1,0 +1,219 @@
+public static void main(){
+   int gcd(int a,int b){
+      whilea(a != b){
+	   /*if{a >= b){
+  		   a -= b;
+	   }
+	   else{
+		   b -= a;
+	   }
+        }
+       return a;
+   }
+}int print("Hello world")
+public public public
+String teste = "teste aspas while # &int if 2  + mais um + adfasd"
+ (-=-
+int 2.3
+
+32.3
+5.655 32 A54321
+TESTE54
+double 
+String 
+if 
+else 
+switch 
+case 
+default 
+while 
+for 
+Do 
+break 
+
+
+
+continue 
+public 
+private 
+protected 
+package 
+import 
+public  static 
+class 
+abstract 
+extends 
+final 
+implements 
+void 
+return 
+main 
+
+
+int(
+double(
+String(
+if(
+else(
+switch(
+case(
+default(
+while(
+for(
+Do(
+break(
+continue(
+public(
+private(
+protected(
+package(
+import(
+t static(
+class(
+abstract(
+extends(
+final(
+implements(
+void(
+return(
+main(
+
+
+int[
+double[
+String[
+if[
+else[
+switch[
+case[
+default[
+while[
+for[
+Do[
+break[
+continue[
+public[
+private[
+protected[
+package[
+import[
+static[
+class[
+abstract[
+extends[
+final[
+implements[
+void[
+return[
+main[
+
+
+int{
+double{
+String{
+if{
+else{
+switch{
+case{
+default{
+while{
+for{
+Do{
+break{
+continue{
+public{
+private{
+protected{
+package{
+import{
+static{
+class{
+abstract{
+extends{
+final{
+implements{
+void{
+return{
+main{
+
+ERRADOS
+intA
+doubleA
+StringA
+ifA
+elseA
+switchA
+caseA
+defaultA
+whileA
+forA
+DoA
+breakA
+continueA
+publicA
+privateA
+protectedA
+packageA
+importA
+staticA
+classA
+abstractA
+extendsA
+finalA
+implementsA
+voidA
+returnA
+mainA
+
+ERRADOS  COMEcO
+ Aint 
+ Adouble 
+ AString 
+Aif 
+Aelse 
+Aswitch 
+Acase 
+Adefault 
+Awhile 
+Afor 
+ADo 
+Abreak 
+Acontinue 
+Apublic 
+Aprivate 
+Aprotected 
+Apackage 
+Aimport 
+Astatic 
+Aclass 
+Aabstract 
+Aextends 
+Afinal 
+Aimplements 
+Avoid 
+Areturn 
+Amain 
+Aoperadores 
+>=
+<=*/
+font
+
+>
+<
+==
+=
+!
+&&
+||
+;
+,
+(
+)
+[
+]
+{
+}
+/
++
+*
+-
