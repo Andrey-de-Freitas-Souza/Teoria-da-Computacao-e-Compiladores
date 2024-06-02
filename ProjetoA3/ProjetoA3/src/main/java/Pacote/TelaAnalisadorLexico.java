@@ -7,9 +7,12 @@ import Entidades.KeyWords;
 import Entidades.Verify;
 
 import java.awt.Color;
+import java.awt.Desktop;
 import java.util.List;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -74,6 +77,11 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 btnDocMouseExited(evt);
+            }
+        });
+        btnDoc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDocActionPerformed(evt);
             }
         });
         getContentPane().add(btnDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(554, 636, 210, 70));
@@ -349,6 +357,15 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
     private void btnDocMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDocMouseExited
         btnDoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnDoc.png")));
     }//GEN-LAST:event_btnDocMouseExited
+
+    private void btnDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDocActionPerformed
+        try {
+                Desktop.getDesktop().browse(new URI("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/AnalisadorLexico.pdf"));
+                } catch (IOException | URISyntaxException ex) {
+                    ex.printStackTrace();
+                }
+                  
+    }//GEN-LAST:event_btnDocActionPerformed
 
     /**
      * @param args the command line arguments
