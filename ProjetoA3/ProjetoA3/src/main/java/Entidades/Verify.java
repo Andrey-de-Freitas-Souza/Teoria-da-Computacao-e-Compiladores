@@ -94,7 +94,7 @@ public class Verify {
                         !palavrasChaves.contains(palavras.get(i))&&
                         verificaNumerico(palavras.get(i))==false){
                     return "<html><pre><font color='red'>ERROR: Variável "+ palavras.get(i) + 
-                            " contém número ou caractere especial.</font></pre></html>";
+                            " contém número ou \ncaractere especial.</font></pre></html>";
 
                 }
                 else if(verificaNumerico(palavras.get(i))&& 
