@@ -20,6 +20,7 @@ public enum KeyWords {
     CONTINUE("continue","| KW_CTRL_REP   |","#F75200","continue ",true),
     //KW MODIFICADORES DE ACESSO
     PUBLIC("public","| KW_MOD_ACESSO |","#F75200","public ",true),
+    PRINT("print","|METODO_ESCREVE |","#8be9fd","print ",true),
     PRIVATE("private","| KW_MOD_ACESSO |","#F75200","private ",true),
     PROTECTED("protected","| KW_MOD_ACESSO |","#F75200","protected ",true),
     //KW CONTROLE DE PACOTES
@@ -60,8 +61,7 @@ public enum KeyWords {
     DIVISAO("&#47","|  OPERADOR_MAT |","ff79c6"," &#47 ",false),
     ADICAO("&#43","|  OPERADOR_MAT |","ff79c6"," &#43 ",false),
     SUBTRACAO("&#45","|  OPERADOR_MAT |","ff79c6"," &#45 ",false),
-    ASPASD("&_AsD","|   DELIMITADOR |","#3fca3c"," &_AsD ",false),
-    ASPASS("&_AsS","|   DELIMITADOR |","#3fca3c"," &_AsS ",false)
+    ASPASD("&_AsD","|   DELIMITADOR  |","#3fca3c"," &_AsD ",false)
     
     ;
     
