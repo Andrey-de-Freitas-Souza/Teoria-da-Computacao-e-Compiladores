@@ -95,6 +95,11 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
                 btnPesqMouseExited(evt);
             }
         });
+        btnPesq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesqActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnPesq, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 636, 210, 70));
 
         btnValidar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens3/btnValidar.png"))); // NOI18N
@@ -366,6 +371,14 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
                 }
                   
     }//GEN-LAST:event_btnDocActionPerformed
+
+    private void btnPesqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesqActionPerformed
+        try {
+                Desktop.getDesktop().browse(new URI("https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/Pesquisa_Analisador_L%C3%A9xico.pdf"));
+                } catch (IOException | URISyntaxException ex) {
+                    ex.printStackTrace();
+                }
+    }//GEN-LAST:event_btnPesqActionPerformed
 
     /**
      * @param args the command line arguments
