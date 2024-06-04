@@ -1,15 +1,14 @@
 public static void main(){
    int gcd(int a,int b){
-      whilea(a != b){
-	   ifa{a >= b){
+      while(a != b){
+	   if{a >= b){
   		   a -= b;
 	   }
 	   else{
-		   b -= a;
-		   
+		   b -= a;	   
 	   }
         }
-       print("<# while( Fim do metodo gcd #>");
+       print("<# Fim do metodo gcd #>");
        return a;
    }
 }

@@ -5,13 +5,10 @@ public static void main(){
   		   a -= b;
 	   }
 	   else{
-		   b -= a;
-		   
+		   b -= a;   
 	   }
         }
        print("<# Fim do metodo gcd #>);
        return a;
    }
 }
-
-ifa
