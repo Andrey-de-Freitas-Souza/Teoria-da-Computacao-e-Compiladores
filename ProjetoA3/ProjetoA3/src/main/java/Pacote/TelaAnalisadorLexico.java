@@ -211,7 +211,7 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
             codigoHtml = codigoHtml.replaceAll('"'+"", "&_AsD");
             codigoHtml = codigoHtml.replaceAll("'", "&_AsS");
             espacado = codigoHtml;
-
+            System.out.println(espacado);
             for (KeyWords kw : keywords) {
                 palavrasChaves.add(kw.getLexema().replaceAll("\\s", ""));
                 boolean check1 = codigoHtml.contains(" "+kw.getLexema()+"&#40")||codigoHtml.contains(" "+kw.getLexema()+"&#91")||
@@ -246,10 +246,11 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
                     espacado = espacado.replaceAll(" "+kw.getLexema()+"&#123"," " + kw.getLexema()+" &#123");        
                 }
                 
-                else{
+                else if(check2 == false){
                     codigoHtml = codigoHtml.replaceAll(kw.getLexema(),"<font color='"+ kw.getHtml()+"'>"+kw.getLexema()+"</font>");
                     espacado = espacado.replaceAll(kw.getLexema(),kw.getEspacado());
                 }
+                System.out.println(espacado);
            
             }
            
@@ -322,6 +323,7 @@ public class TelaAnalisadorLexico extends javax.swing.JFrame {
                                     
             }
             codigoHtml = "<html><pre>"+codigoHtml+"<html></pre>";
+ 
             txtCodigo.setText(codigoHtml);            
     } catch (IOException ex) {
         Logger.getLogger(TelaAnalisadorLexico.class.getName()).log(Level.SEVERE, null, ex);

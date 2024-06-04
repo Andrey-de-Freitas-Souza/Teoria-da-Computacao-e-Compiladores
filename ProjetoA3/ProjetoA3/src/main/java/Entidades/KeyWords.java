@@ -12,7 +12,7 @@ public enum KeyWords {
     CASE("case","|KW_CONDICIONAL |","ff79c6", "case ",true),
     DEFAULT("default","|KW_CONDICIONAL |","ff79c6", "default ",true),
     //KW REPETIÇÃO
-    WHILE("while","|  KW_REPETICAO |","#3fca3c","While ",true),
+    WHILE("while","|  KW_REPETICAO |","#3fca3c","while ",true),
     FOR("for","|  KW_REPETICAO |","#3fca3c","for ",true),
     DO("Do","|  KW_REPETICAO |","#3fca3c","do ",true),
     //KW CONTOLE REPETIÇÃO

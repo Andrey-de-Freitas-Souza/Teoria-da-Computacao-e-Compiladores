@@ -41,7 +41,7 @@ public class Verify {
         if(i==palavras.size()-1){
             contadorIComent=0;
         }   
-        System.out.println(palavras.get(i)+palavras.get(i+contadorIComent));
+
         if((palavras.get(i)+palavras.get(i+contadorIComent)).equals("&#47&#42")){
             incComent++;
         }
@@ -51,8 +51,7 @@ public class Verify {
         
      }
      if(incComent!= FimComent){
-            System.out.println(incComent);
-            System.out.println(FimComent);
+
             return "<html><pre><font color='red'>ERROR: Comentário não finalizado.</font></pre></html>";
         }
      
