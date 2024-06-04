@@ -1,0 +1,16 @@
+public static void main(){
+   int gcd(int a,int b){
+      whilea(a != b){
+	   ifa{a >= b){
+  		   a -= b;
+	   }
+	   else{
+		   b -= a;
+		   
+	   }
+        }
+       print("<# while( Fim do metodo gcd #>");
+       return a;
+   }
+}
+

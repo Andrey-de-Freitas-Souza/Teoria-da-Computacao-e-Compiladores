@@ -1,0 +1,15 @@
+public static void main(){
+   int gcd(int a,int b){
+      whilea(a != b){
+	   /*if{a >= b){
+  		   a -= b;
+	   }
+	   else{
+		   b -= a;
+		   
+	   }
+        }
+       print("<# Fim do metodo gcd #>");
+       return a;
+   }
+}
