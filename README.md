@@ -161,7 +161,7 @@ lógica do autômato a seguir:
 
 
 <p align="center">
-<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/imagens3/AutmotoString.jpg?raw=true">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/imagens3/AutmotoString.png?raw=true">
 </p>
 Onde Caracter é qualquer caractere.
 
@@ -174,6 +174,7 @@ utilizado a lógica do autômato a seguir:
 <img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/imagens3/AutomatoComentario.png?raw=true">
 </p>
 Onde Caracter é qualquer caractere.
+
 
 <h3>Grupo:</h3>
 - Rafael Rossetto Guitarrari (RA: 823158602) <br>
