@@ -103,6 +103,78 @@ Imagem 1 - Diagrama de Transições do sistema modelado.
 <p align="center">
 <img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/imagens3/imgAnalisadorGit.png?raw=true">
 </p>
+
+<h3>Introdução:</h3>
+  Na modelagem do analisador, considerou-se um conjunto de palavras 
+e caracteres especiais reservados da linguagem Java, para geração de tokens pelo 
+analisador. Além das palavras reservadas o analisador também pode identificar 
+variáveis, valores, comentários feitos pelo usuário ou textos que estão entre em aspas 
+que são considerados como String pelo analisador.
+
+<h3>1. Palavras chaves (Keywords): </h3>
+Foram escolhidas algumas palavras reservadas da linguagem Java para criação do 
+analisador, a tabela a seguir contém todas as palavras reservadas e os seus respectivos 
+tokens, gerados após a análise. <br><br>
+
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/imagens3/TabelaKw.png?raw=true">
+</p>
+
+<h3>2. Caracteres especiais: </h3>
+Também foram escolhidos alguns caracteres especiais utilizados na linguagem Java, 
+a tabela a seguir contém esses caracteres e os seus respectivos tokens. <br><br>
+
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/imagens3/TabelaCaractere.png?raw=true">
+</p>
+
+<h3>3. Variáveis: </h3>
+Para que o analisador identifique variáveis escritas no código do usuário foi utilizado 
+a expressão regular a seguir que permite apenas palavras que comece com uma letra 
+e após ela contenha apenas letras ou números. <br>
+
+<p align="center">^[a-zA-Z][a-zA-Z0-9]*$</p>
+A expressão pode ser representada pelo seguinte autômato:
+
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/imagens3/AutomatoVariavel.png?raw=true">
+</p>
+Onde Letra é igual a [a-zA-Z] e número é [0-9].
+
+
+<h3>4. Valores: </h3>
+Para que o analisador identifique valores escritos no código do usuário foi utilizado 
+a expressão regular a seguir que permite apenas valores numéricos com ou sem um 
+ponto entre eles.
+
+<p align="center">^[0-9]+(. [0-9]+)?$</p>
+A expressão pode ser representada pelo seguinte autômato:
+
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/imagens3/AutomatoNumeros.png?raw=true">
+</p>
+Onde Número é igual a [0-9] e Separador é igual a [.].
+
+<h3>5. Textos: </h3>
+Para que o analisador identifique textos escritos no código do usuário foi utilizado a 
+lógica do autômato a seguir: 
+
+
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/imagens3/AutmotoString.jpg?raw=true">
+</p>
+Onde Caracter é qualquer caractere.
+
+<h3>6. Comentários </h3>
+Para que o analisador identifique comentários escritos no código do usuário foi 
+utilizado a lógica do autômato a seguir:
+
+
+<p align="center">
+<img src="https://github.com/Andrey-de-Freitas-Souza/Teoria-da-Computacao-e-Compiladores/blob/main/ProjetoA3/ProjetoA3/src/main/resources/imagens3/AutomatoComentario.png?raw=true">
+</p>
+Onde Caracter é qualquer caractere.
+
 <h3>Grupo:</h3>
 - Rafael Rossetto Guitarrari (RA: 823158602) <br>
 - Andrey de Freitas Souza (RA: 823217536) <br>
